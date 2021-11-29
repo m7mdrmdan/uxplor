@@ -1,0 +1,43 @@
+// Retouch
+
+.spoc {
+  &-tiles-wrapper {
+    height: 325px;
+    overflow-y: hidden;
+
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      // height: 435px;
+      height: 355px;
+    } // END: Desktop size
+  }
+
+  &-products-wrapper {
+    height: 165px;
+    overflow-y: hidden;
+
+    @include media-breakpoint-up(sm) {
+      // START: Mobile (Landscape) size
+      height: 180px;
+    } // END: Mobile (Landscape) size
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      height: 205px;
+    } // END: Desktop size
+  }
+}
+
+// .refresh-status
+.refresh {
+  &-icon {
+    width: 18px;
+    height: 18px;
+
+    #{$ltr-global} & {
+      margin-right: 0.25rem;
+    }
+    #{$rtl-global} & {
+      margin-left: 0.25rem;
+    }
+  }
+}

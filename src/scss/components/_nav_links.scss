@@ -1,0 +1,61 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: Nav Links ********/
+.nav-links {
+  background: $color-white;
+  border-top: 0.5px solid $color-monochrome-silver;
+  border-bottom: 0.5px solid $color-monochrome-silver;
+  &-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    // #{$ltr} & {
+    //   margin-left: -2.25rem;
+    // }
+    // #{$rtl} & {
+    //   margin-right: -2.25rem;
+    // }
+  }
+  &-link {
+    white-space: nowrap;
+    padding: 1rem 2.25rem;
+    position: relative;
+    transition: all 0.25s linear;
+    &:hover {
+      color: $color-primary-red;
+    }
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      background-color: $color-primary-red;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+  }
+  &-item {
+    &.active {
+      .nav-links-link {
+        color: $color-primary-red;
+        &:after {
+          opacity: 1;
+          height: 3px;
+          width: 100%;
+        }
+      }
+    }
+    &:hover {
+      .nav-links-link:after {
+        opacity: 1;
+        height: 3px;
+        width: 100%;
+      }
+    }
+  }
+}
+/******** END: Nav Links ********/

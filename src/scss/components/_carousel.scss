@@ -1,0 +1,285 @@
+// Imports
+@import "../imports/functions";
+
+#{$ng-deep} {
+  @import "../vendors/owl-carousel/owl.carousel";
+}
+
+// Mixins
+%arrow-wrapper-left {
+  transform: rotate(-45deg) ;
+}
+%arrow-wrapper-right {
+  transform: rotate(45deg);
+}
+
+%arrow-left {
+  transform: translate(15%, -85%);
+}
+%arrow-right {
+  transform: translate(-15%, -85%);
+}
+
+
+@mixin owlSettings {
+  .owl {
+
+    // owl centering
+    &-stage {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // owl-dots
+    &-dot {
+      // .owl-dots Style
+      &s {
+        width: 100%;
+        text-align: center;
+        -webkit-tap-highlight-color: $color-transparent;
+        margin-top: 10px;
+      }
+
+      // .owl-dot Style
+      display: inline-block;
+      margin: 0 3px;
+      zoom: 1;
+
+      span {
+        width: $dot-width;
+        height: $dot-height;
+        background: $color-monochrome-mid-grey;
+        margin: 2px 5px;
+        border: 1px solid $color-monochrome-mid-grey;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      // Active style
+      &.active {
+        span {
+          background: $color-white;
+          border-color: $color-monochrome-dark-grey;
+
+          &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 6px solid $color-monochrome-dark-grey;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
+    // owl-nav
+    &-nav {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 5;
+      transform: translateY(-50%);
+
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      span {
+        display: block;
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        border-radius: 50%;
+        font-size: 0;
+
+        .card-carousel & {
+          background-color: $color-white;
+          box-shadow: 0 1px 3px 0 $color-monochrome-platinum;
+        }
+
+        &::before{
+          content: "";
+          width: 24px;
+          height: 24px;
+          border-top: 2px solid $color-white;
+          position: absolute;
+          left: 30%;
+          top: 70%;
+
+          .card-carousel & {
+            border-width: 1px !important;
+            border-color: $color-monochrome-dark-grey !important;
+          }
+        }
+
+      }
+
+      .card-carousel & {
+        button.disabled {
+          opacity: 0.7;
+
+          span {
+            cursor: default;
+            background-color: $color-monochrome-aluminium;
+
+            &::before {
+              border-color: $color-monochrome-silver !important;
+            }
+          }
+        }
+      }
+    }
+
+    &-prev {
+      .full-width-carousel & {
+        #{$ltr} & {
+          left: 70px;
+        }
+
+        #{$rtl} & {
+          right: 70px;
+        }
+      }
+      .card-carousel & {
+        #{$ltr} & {
+          left: -30px;
+        }
+
+        #{$rtl} & {
+          right: -30px;
+        }
+      }
+
+
+      span {
+        #{$ltr} & {
+          @extend %arrow-wrapper-left;
+        }
+
+        #{$rtl} & {
+          @extend %arrow-wrapper-right;
+        }
+
+        &::before {
+          #{$ltr} & {
+            border-left: 2px solid $color-white;
+            @extend %arrow-left;
+          }
+
+          #{$rtl} & {
+            border-right: 2px solid $color-white;
+            @extend %arrow-right;
+          }
+        }
+      }
+    }
+
+    &-next {
+      .full-width-carousel & {
+        #{$ltr} & {
+          right: 70px;
+        }
+
+        #{$rtl} & {
+          left: 70px;
+        }
+      }
+      .card-carousel & {
+        #{$ltr} & {
+          right: -30px;
+        }
+
+        #{$rtl} & {
+          left: -30px;
+        }
+      }
+
+      span {
+        #{$ltr} & {
+          @extend %arrow-wrapper-right;
+        }
+
+        #{$rtl} & {
+          @extend %arrow-wrapper-left;
+        }
+
+        &::before{
+          #{$ltr} & {
+            border-right: 2px solid $color-white;
+            @extend %arrow-right;
+          }
+
+          #{$rtl} & {
+            border-left: 2px solid $color-white;
+            @extend %arrow-left;
+          }
+        }
+      }
+    }
+  }
+
+  .card-carousel {
+    .owl-stage-outer {
+      padding: 0.25rem 0;
+    }
+  }
+
+  .full-width-carousel {
+    .owl-dot {
+      &s {
+        position: absolute;
+        bottom: 10px;
+        margin-top: 0;
+      }
+
+      span {
+        background: $color-white;
+        border: 1px solid $color-white;
+      }
+
+      &.active {
+        span {
+          background: $color-primary-red;
+          border-color: $color-white;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/******** START: Carousel ********/
+.carousel {
+  &-container {
+    position: relative;
+
+    &.carousel-center {
+      @include media-breakpoint-down(sm){
+        margin: 0 -15px;
+      }
+    }
+  }
+}
+
+// Carousel dots
+@if $project-path==$path-ng {
+  #{$ng-deep} {
+    @include owlSettings;
+  }
+}
+
+@else if $project-path==$path-static {
+  @include owlSettings;
+}
+/******** END: Carousel ********/

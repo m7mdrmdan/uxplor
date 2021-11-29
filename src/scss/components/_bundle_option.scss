@@ -1,0 +1,49 @@
+// Imports
+@import "../imports/functions";
+@import "../components/checkbox_radio";
+@import "../utils/utils_font";
+
+/******** START: Bundle Option ********/
+.bundle-option {
+  background: $color-white;
+  padding: 1.5rem;
+  @extend .font-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .custom-control-label::before {
+    background: $color-monochrome-mid-grey;
+    border-color: $color-monochrome-mid-grey;
+  }
+
+  .bundle-option-toggle &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+/******** END: Bundle Option ********/
+
+/******** START: Bundle Option Shimmer ********/
+.shimmer {
+  &-icon {
+    width: 50px;
+    height: 50px;
+    #{$ltr} & {
+      margin-right: 0.6rem;
+    }
+    #{$rtl} & {
+      margin-left: 0.6rem;
+    }
+  }
+
+  &-arrow {
+    color: #e9e9ed;
+    background: transparent;
+  }
+
+  &-title {
+    width: 70%;
+  }
+}
+/******** END: Bundle Option Shimmer ********/

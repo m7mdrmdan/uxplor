@@ -1,0 +1,42 @@
+// Primary colours
+$color-primary-red: #e60000;
+$color-primary-grey: #4a4d4e;
+$color-primary-white: #ffffff;
+$color-primary-light-red: #ff0000;
+// Secondary colours
+$color-secondary-turquoise: #007c92;
+$color-secondary-aqua-blue: #00b0ca;
+$color-secondary-metallic-seaweed: #017C92;
+$color-secondary-trypan-blue: #3E00B2;
+$color-secondary-citron: #8F9500;
+$color-secondary-phlox: #CE48FF;
+$color-secondary-aubergine: #5e2750;
+$color-secondary-red-violet: #9c2aa0;
+$color-secondary-spring-green: #a8b400;
+$color-secondary-go-green: #2EAC6D;
+$color-secondary-fresh-orange: #eb9700;
+$color-secondary-lemon-yellow: #fecb00;
+$color-secondary-yellow-warning: #ffa300;
+// Digital colours
+$color-digital-green: #428600;
+$color-digital-maroon: #990000;
+$color-digital-dark-red: #bd0000;
+// Monochrome colours
+$color-monochrome-black: #000000;
+$color-monochrome-dark-grey: #333333;
+$color-monochrome-anthracite: #666666;
+$color-monochrome-mid-grey: #999999;
+$color-monochrome-platinum: #afafaf;
+$color-monochrome-silver: #cccccc;
+$color-monochrome-aluminium: #ebebeb;
+$color-monochrome-light-grey: #f4f4f4;
+$color-monochrome-transparent: transparent;
+// Shortcut colours
+$color-body: $color-monochrome-dark-grey;
+$color-white: $color-primary-white;
+$color-black: $color-monochrome-black;
+$color-transparent: $color-monochrome-transparent;
+// Dynamic vars for colors
+$main-color: $color-primary-red;
+$secondary-color: $color-monochrome-anthracite;
+$color-lineargradient: linear-gradient(#DE1087, #FA5A6B);

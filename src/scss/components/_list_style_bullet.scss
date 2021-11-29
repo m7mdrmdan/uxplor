@@ -1,0 +1,31 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: List Style Bullets ********/
+.list-style-bullets {
+    list-style: none;
+    li {
+        display: flex;
+        &:before {
+            content: "\2022";
+            color: $color-monochrome-anthracite;
+            font-size: 2rem;
+            line-height: 1;
+            // display: inline-block; 
+            // vertical-align: top;
+            // width: 1rem;
+            #{$ltr} & {
+                margin-right: 1rem;
+            }
+            #{$rtl} & {
+                margin-left: 1rem;
+            }
+        }
+    }
+    &-red {
+        li:before {
+            color: $color-primary-red;
+        }
+    }
+}
+/******** END: List Style Bullets ********/

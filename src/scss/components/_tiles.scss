@@ -1,0 +1,228 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: Tiles ********/
+.tiles {
+  height: 100%;
+  color: $color-body;
+  background-color: $color-white;
+  overflow: hidden;
+
+  // Fixing Safari hover
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+
+  &-content {
+    padding: 1.33rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    // height: 100%;
+
+    @include media-breakpoint-up(md) {
+      // START: Tablet size
+      padding: 1.66rem;
+      // END: Tablet size
+    }
+
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      padding: 2rem;
+      // END: Desktop size
+    }
+
+    .tiles-wide & {
+      @include media-breakpoint-up(lg) {
+        // START: Tablet size
+        width: 50%;
+        padding: 1.5rem;
+        // END: Tablet size
+      }
+    }
+  }
+
+  &-img {
+    height: 200px;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease-in-out;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      .tiles-wide & {
+        @include media-breakpoint-up(lg) {
+          // START: Tablet size
+          min-height: 200px;
+          // END: Tablet size
+        }
+      }
+    }
+
+    // tiles images height
+    &-sm {
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        height: 100px;
+      }
+      // END: Tablet size
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        height: 150px;
+      }
+      // END: Desktop size
+    }
+
+    &-md {
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        height: 200px;
+      }
+      // END: Tablet size
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        height: 100%;
+      }
+      // END: Desktop size
+    }
+
+    &-lg {
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        height: 250px;
+      }
+      // END: Tablet size
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        height: 400px;
+      }
+      // END: Desktop size
+    }
+  }
+
+  &-title {
+    line-height: 1;
+
+    & > * {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+
+  &-chevron {
+    color: $color-primary-red;
+
+    #{$ltr} & {
+      margin-left: 0.5rem;
+    }
+
+    #{$rtl} & {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-text {
+    line-height: 1.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  
+    @include media-breakpoint-up(md) {
+      // START: Tablet size
+      -webkit-line-clamp: 2;
+      // END: Tablet size
+    }
+  }
+
+  &-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .tiles-wide & {
+      @include media-breakpoint-up(lg) {
+        // START: Tablet size
+        display: flex;
+        // END: Tablet size
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      
+      .tiles-img {
+        transform: scale(1.04);
+      }
+    }
+  }
+
+  &-label {
+    background: $color-monochrome-dark-grey;
+    color: $color-white;
+    position: absolute;
+    bottom: 0;
+    
+    #{$ltr} & {
+      padding: 6px 12px 6px 16px;
+      border-top-left-radius: 24px;
+      right: 0;
+    }
+
+    #{$rtl} & {
+      padding: 6px 16px 6px 12px;
+      border-top-right-radius: 24px;
+      left: 0;
+    }
+  }
+
+  // Shimmer loader
+  .shimmer {
+    &-img {
+      height: 140px;
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        height: 240px;
+        // END: Desktop size
+      }
+    }
+
+    &-title {
+      width: 50%;
+    }
+
+    &-content {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // .tile-md
+  &.tiles-md {
+    .tiles-content {
+      padding: 0.5rem;
+
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        padding: 0.75rem;
+        // END: Tablet size
+      }
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        padding: 1rem;
+        // END: Desktop size
+      }
+    }
+  }
+}
+/******** END: Tiles ********/

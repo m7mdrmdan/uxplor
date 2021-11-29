@@ -1,0 +1,316 @@
+// Button style
+.btn {
+  @include button($font-size-base, $border-radius-default, $button-shadow);
+}
+
+// Button options
+.btn {
+  // .btn-primary
+  &-primary {
+    color: $color-white;
+    fill: $color-white;
+    background-color: $main-color;
+    border-color: $main-color;
+    
+    &:hover {
+      // color: $color-white;
+      background-color: $color-digital-maroon;
+      border-color: $color-digital-maroon;
+    }
+    &-dark {
+      @extend .btn-primary;
+    }
+  }
+
+  // .btn-secondary
+  &-secondary {
+    color: $color-white;
+    background-color: $color-monochrome-anthracite;
+    border-color: $color-monochrome-anthracite;
+    
+    &:hover {
+      // color: $color-white;
+      background-color: $color-monochrome-dark-grey;
+      border-color: $color-monochrome-dark-grey;
+    }
+    &:focus {
+      background-color: $color-black;
+    }
+    &-dark {
+      @extend .btn-secondary;
+      &:hover {
+        border-color: $color-monochrome-mid-grey;
+      }
+    }
+  }
+
+  // .btn-green
+  &-green {
+    color: $color-white;
+    background-color: $color-digital-green;
+    border-color: $color-digital-green;
+
+    &:hover {
+      background-color: darken($color-digital-green, 7%);
+      border-color: darken($color-digital-green, 7%);
+    }
+    &:focus {
+      background-color: darken($color-digital-green, 13%);
+    }
+    
+    &-dark {
+      @extend .btn-secondary;
+      &:hover {
+        border-color: $color-monochrome-mid-grey;
+      }
+    }
+  }
+
+  // .btn-aluminium
+  &-aluminium {
+    color: lighten($color-monochrome-dark-grey, 2%);
+    background-color: darken($color-monochrome-aluminium, 1%);
+    border-color: darken($color-monochrome-aluminium, 1%);
+
+    &:hover {
+      background-color: darken($color-monochrome-aluminium, 9%);
+      border-color: darken($color-monochrome-aluminium, 9%);
+    }
+    &:focus {
+      background-color: darken($color-monochrome-aluminium, 14%);
+    }
+    &-dark {
+      @extend .btn-secondary;
+      &:hover {
+        border-color: $color-monochrome-mid-grey;
+      }
+    }
+  }
+
+  // .btn-outline
+  &-outline {
+    color: $color-monochrome-dark-grey;
+    background-color: $color-transparent;
+    border-color: $color-monochrome-dark-grey;
+    box-shadow: none;
+
+    &:hover {
+      background-color: $color-monochrome-aluminium;
+      border-color: lighten($color-monochrome-dark-grey, 24%);
+    }
+    &:focus {
+      background-color: $color-transparent;
+    }
+
+    &-dark {
+      @extend .btn-outline;
+      color: $color-white;
+      border-color: $color-white;
+
+      &:hover {
+        background-color: $color-transparent;
+        text-decoration: underline;
+        border-color: $color-white;
+      }
+      &:focus {
+        color: $color-secondary-aqua-blue;
+        border-color: $color-secondary-aqua-blue;
+      }
+
+      &-primary {
+        @extend .btn-outline;
+        color: $color-white;
+        border-color: $color-white;
+
+        &:hover {
+          background-color: $color-digital-maroon;
+          border-color: $color-digital-maroon;
+        }
+        &:focus {
+          background-color: $color-transparent;
+        }
+      }
+    }
+
+    // .btn-outline-red
+    &-red {
+      color: $color-primary-red;
+      background-color: $color-transparent;
+      border-color: $color-primary-red;
+      box-shadow: none;
+
+      &:hover {
+        color: $color-white;
+        background-color: $color-primary-red;
+      }
+
+      &:focus {
+        color: $color-white;
+        background-color: $color-primary-red;
+      }
+
+    }
+  }
+
+  // .btn-link
+  &-link {
+    color: $color-monochrome-dark-grey;
+    background-color: $color-transparent;
+    box-shadow: none;
+    position: relative;
+
+    &-arrow {
+      #{$ltr-global} & {
+        padding-right: 0.9rem;
+      }
+      #{$rtl-global} & {
+        padding-left: 0.9rem;
+      }
+
+      &:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-top: 1px solid $main-color;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+
+        #{$ltr-global} & {
+          border-right: 1px solid $main-color;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        #{$rtl-global} & {
+          border-left: 1px solid $main-color;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+
+    &:hover {
+      color: $main-color;
+      text-decoration: underline;
+    }
+    &:focus {
+      color: $color-secondary-aqua-blue;
+      border-color: $color-transparent !important;
+      outline: none !important;
+    }
+    &.btn-disabled {
+      color: $color-monochrome-silver;
+
+      &:after {
+        border-color: $color-monochrome-silver;
+      }
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+
+    &-dark {
+      @extend .btn-link;
+      color: $color-white;
+
+      &:hover {
+        color: $color-white;
+      }
+
+      &:focus {
+        color: $color-secondary-aqua-blue;
+      }
+
+      &.btn-disabled {
+        color: $color-monochrome-anthracite;
+
+        &:after {
+          border-color: $color-monochrome-anthracite;
+        }
+      }
+    }
+
+    &-active {
+      border-color: $color-primary-red;
+      background-color: $color-white;
+      &:focus {
+        border-color: $color-primary-red !important;
+        color: $color-monochrome-dark-grey;
+        background-color: $color-white;
+      }
+    }
+  }
+
+  // .btn-icon
+  &-icon {
+    & > span {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > :last-child {
+        #{$ltr-global} & {
+          margin-left: $font-size-base;
+        }
+        #{$rtl-global} & {
+          margin-right: $font-size-base;
+        }
+      }
+    }
+    svg {
+      width: $font-size-base * 0.8;
+      height: $font-size-base * 0.8;
+      position: relative;
+      top: -1px;
+
+      #{$rtl-global} & {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  // .btn-disabled
+  &.btn-disabled {
+    color: $color-monochrome-silver;
+    background-color: $color-monochrome-light-grey;
+    border-color: $color-monochrome-light-grey;
+    box-shadow: none;
+
+    &:hover {
+      cursor: not-allowed;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  &-sm {
+    font-size: $font-size-base * 0.8;
+    padding: $font-size-base * 0.5 $font-size-base;
+
+    svg {
+      width: $font-size-base * 0.6;
+      height: $font-size-base * 0.6;
+    }
+  }
+
+  &-lg {
+    font-size: $font-size-base * 1.2;
+    padding: $font-size-base $font-size-base * 1.6;
+
+    svg {
+      width: $font-size-base;
+      height: $font-size-base;
+    }
+  }
+
+
+  &-sm-fit {
+    
+    @include media-breakpoint-down(md) {
+      // START: Desktop size
+      width: 100%;
+      display: block;
+      // END: Desktop size
+    }
+  }
+}

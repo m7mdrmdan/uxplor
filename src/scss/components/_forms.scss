@@ -1,0 +1,303 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: Form Validation ********/
+@each $state, $data in $form-validation-states {
+  @include form-validation-state(
+      $state,
+      map-get($data, color),
+      map-get($data, icon)
+  );
+}
+
+.was-validated {
+  .form-control {
+    &:valid,
+    &:valid:hover,
+    &:valid:focus,
+    &:valid:active {
+      border-color: $color-digital-green;
+      box-shadow: none;
+    }
+
+    &:invalid,
+    &:invalid:hover,
+    &:invalid:focus,
+    &:invalid:active {
+      border-color: $color-primary-red;
+      box-shadow: none;
+    }
+
+    #{$ltr} & {
+      padding-right: calc(1.5em + 0.75rem);
+      padding-left: 1rem;
+
+      &:valid,
+      &.is-valid,
+      &:invalid,
+      &.is-invalid {
+        background-position: center right calc(0.375em + 0.1875rem);
+      }
+    }
+
+    #{$rtl} & {
+      padding-left: calc(1.5em + 0.75rem);
+      padding-right: 1rem;
+
+      &:valid,
+      &.is-valid,
+      &:invalid,
+      &.is-invalid {
+        background-position: center left calc(0.375em + 0.1875rem);
+      }
+    }
+  }
+}
+
+.valid-feedback {
+  color: $color-digital-green;
+}
+
+.invalid-feedback {
+  color: $color-primary-red;
+}
+
+/******** End: Form Validation ********/
+
+/******** Start: Normal Form ********/
+.form-group {
+  margin-bottom: 1.5rem;
+
+  .input-text {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin: 0 $grid-gutter-width/2;
+    top: 50%;
+    transform: translateY(-50%);
+    // bottom: 0;
+    background-color: $white;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary-red;
+    }
+
+    #{$ltr-global} & {
+      right: 0;
+    }
+
+    #{$rtl-global} & {
+      left: 0;
+    }
+  }
+}
+
+label {
+  color: $black;
+  display: block;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: $font-size-base * 0.75 $font-size-base;
+  font-size: $font-size-base;
+  line-height: $font-size-base;
+  color: $black;
+  background-color: $white;
+  background-clip: padding-box;
+  border: 1px solid $color-monochrome-silver;
+  border-radius: 6px;
+  // Hover
+  &:hover {
+    border-color: $color-secondary-aqua-blue;
+  }
+
+  // Focus and Active
+  &:focus,
+  &:active,
+  &:focus:hover,
+  &:active:hover {
+    border-color: $color-secondary-aqua-blue;
+    box-shadow: none;
+    outline: 0;
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: $color-monochrome-platinum;
+    opacity: 1;
+  }
+
+  //Disabled and read only
+  &:disabled,
+  &[readonly] {
+    background: $color-monochrome-light-grey;
+    cursor: not-allowed;
+    border-color: $color-monochrome-silver;
+    opacity: 0.5;
+  }
+}
+
+/******** End: Normal Form ********/
+
+/******** START: Dark Form ********/
+.form-dark {
+  label {
+    color: $white;
+  }
+}
+
+.form-control.form-control-dark {
+  &:disabled {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(204, 204, 204, 0.25);
+
+    &::placeholder {
+      color: $color-monochrome-platinum;
+      opacity: 0.5;
+    }
+  }
+}
+
+/******** End: Dark Form ********/
+
+/******** START: Customize Form ********/
+.btn-resend {
+  position: absolute;
+  top: 50%;
+  transform: translate(-0.5rem, -50%);
+  padding: 0;
+  margin-bottom: 0;
+  color: $color-primary-red;
+
+  #{$ltr} & {
+    right: 0.5rem;
+  }
+
+  #{$rtl} & {
+    left: 1.5rem;
+  }
+}
+
+/******** END: Customize Form ********/
+
+/******** START: Center icon container *******/
+.center-icon-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $grid-gutter-width/3;
+  margin: auto -20px;
+  background-color: $color-primary-red;
+  box-shadow: $box-shadow-sm;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/******** END: Center icon container *******/
+
+/******** START: Dropdown Select *******/
+.dropdown-select {
+  display: inline-block;
+  width: 100%;
+  height: calc(1.4em + 1rem + 2px);
+  padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+  line-height: $custom-select-line-height;
+  color: $color-monochrome-platinum;
+  vertical-align: middle;
+  background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x center;
+  background-size: $custom-select-bg-size;
+  border: $custom-select-border-width solid $custom-select-border-color;
+  @if $enable-rounded {
+    border-radius: $custom-select-border-radius;
+  } @else {
+    border-radius: 0;
+  }
+  appearance: none;
+
+  &:focus {
+    border-color: $custom-select-focus-border-color;
+    outline: 0;
+    box-shadow: $custom-select-focus-box-shadow;
+
+    &::-ms-value {
+      color: $input-color;
+      background-color: $input-bg;
+    }
+  }
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    height: auto;
+    padding-right: $custom-select-padding-x;
+    background-image: none;
+  }
+
+  &:disabled {
+    color: $custom-select-disabled-color;
+    background-color: $custom-select-disabled-bg;
+  }
+
+  // Hides the default caret in IE11
+  &::-ms-expand {
+    opacity: 0;
+  }
+}
+
+.dropdown-select-lg {
+  height: calc(1.6em + 1rem + 2px);
+  padding-top: $custom-select-padding-y;
+  padding-bottom: $custom-select-padding-y;
+  font-size: $font-size-base;
+
+  #{$rtl} & {
+    font-family: $font-family-regular-ar;
+  }
+
+  #{$ltr} & {
+    font-family: $font-family-regular-en;
+  }
+}
+
+/******** END: Dropdown Select *******/
+
+/******** START: form Select *******/
+.form-select {
+  select {
+    @extend .form-control;
+    appearance: none;
+
+    #{$ltr} & {
+      padding-right: 3rem;
+    }
+
+    #{$rtl} & {
+      padding-left: 3rem;
+    }
+  }
+
+  svg {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: $white;
+
+    #{$ltr} & {
+      right: 1rem;
+    }
+
+    #{$rtl} & {
+      left: 1rem;
+    }
+  }
+}
+
+/******** END: form Select *******/
+

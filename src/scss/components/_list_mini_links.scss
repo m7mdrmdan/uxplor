@@ -1,0 +1,13 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: List Mini Links ********/
+.list-mini-links {
+  &-icon {
+    background: $color-white;
+    border-radius: $border-radius-default;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+}
+/******** END: List Mini Links ********/

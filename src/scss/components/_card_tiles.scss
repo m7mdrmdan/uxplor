@@ -1,0 +1,138 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+// Vars
+%card-plan-padding {
+  margin: 1rem;
+}
+$card-tiles-border-color: $color-monochrome-silver;
+$card-plan-border: 1px solid $card-tiles-border-color;
+
+/******** START: Card plan ********/
+.card {
+  &-tiles {
+    background: $color-white;
+    margin-bottom: 1rem;
+    border: $card-plan-border;
+    overflow: hidden;
+
+    .table-cell-md :host-context & {
+      @include media-breakpoint-down(md) {
+        // START: To Tablet size
+        width: 200px;
+      }
+      // END: To Tablet size
+    }
+
+    // Card Header
+    &-header {
+      @extend %card-plan-padding;
+
+      &-type {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+      }
+
+      &-icon {
+        #{$ltr} & {
+          margin-right: 0.5rem;
+        }
+
+        #{$rtl} & {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    // Card Body
+    &-body {
+      @extend %card-plan-padding;
+      padding-top: 1rem;
+      border-top: $card-plan-border;
+    }
+
+    &-list {
+      &-item {
+        display: flex;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+
+          .list-small & {
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        &-icon {
+          fill: $color-digital-green;
+
+          #{$ltr} & {
+            margin-right: 0.5rem;
+          }
+
+          #{$rtl} & {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+
+    //card-plan-current in flex management
+    &-current {
+      &-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-bold;
+        list-style: none;
+        padding: 1rem;
+        background: $color-monochrome-light-grey;
+        border-radius: $border-radius-default;
+        border: 1px solid $color-monochrome-silver;
+
+        &-item {
+          padding: 0 1.5rem;
+          #{$ltr} & {
+            border-right: 1px solid $color-monochrome-silver;
+          }
+          #{$rtl} & {
+            border-left: 1px solid $color-monochrome-silver;
+          }
+          &:last-child {
+            border: 0 !important;
+          }
+        }
+      }
+      .card-plan-footer {
+        padding: 1rem;
+        border-top: 1px solid $color-monochrome-silver;
+      }
+    }
+
+    .collapse-btn {
+      border-top-color: $card-tiles-border-color !important;
+    }
+  }
+}
+
+.more {
+  display: none;
+}
+
+.collapsed {
+  .more {
+    display: inline-block;
+  }
+
+  .less {
+    display: none;
+  }
+
+  .icon-chevron {
+    transform: scaleY(1);
+  }
+}
+
+/******** END: Card plan ********/

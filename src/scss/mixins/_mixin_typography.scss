@@ -1,0 +1,21 @@
+// Typography
+
+@mixin h1 {
+  @include font-light;
+}
+
+@mixin h2 {
+  @include media-breakpoint-up(sm) {
+    // START: Mobile (Landscape) size
+    @include font-light;
+    // END: Mobile (Landscape) size
+  }
+}
+
+@mixin h3 {
+  @include media-breakpoint-up(lg) {
+    // START: Desktop size
+    @include font-light;
+    // END: Desktop size
+  }
+}

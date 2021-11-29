@@ -1,0 +1,60 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+/******** START: Header Search ********/
+header {
+  * {
+    outline: none !important;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+/******** END: Header Search ********/
+
+/***** START: Main Header *****/
+//Nav
+.nav {
+  //Nav Header search
+  &-header-search {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 1rem 0;
+    z-index: 3;
+    font-size: 1.5rem;
+    line-height: 1;
+    background-color: $color-primary-white;
+
+    &.nav-fixed {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+/******** END: Main Header ********/
+
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-text {
+    width: 100%;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      width: auto;
+    }
+  }
+}
+#{$ng-deep} .icon-stroke {
+  stroke: $color-monochrome-black;
+}

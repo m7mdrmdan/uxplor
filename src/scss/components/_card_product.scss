@@ -1,0 +1,77 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+/******** START: Card Product ********/
+.card {
+  &-product {
+    background-color: $color-monochrome-aluminium;
+    text-align: center;
+    position: relative;
+  }
+
+  // .card-link
+  &-link {
+    display: block;
+    padding: 1rem;
+  }
+
+  // .card-head
+  &-head {
+    margin-bottom: 2.5rem;
+
+    & > * {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      @extend .font-bold;
+      text-transform: capitalize;
+    }
+  }
+
+  // .card-body
+  &-body {
+    &-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-white;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      margin: auto;
+
+      @include media-breakpoint-up(lg) {
+        // START: Tablet size
+        width: 104px;
+        height: 104px;
+      } // END: Tablet size
+
+      & > * {
+        width: 60%;
+        height: 60%;
+      }
+
+      &.float-icon {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 30px);
+
+        & + .card-space {
+          width: 25px;
+          height: 25px;
+          margin: auto;
+
+          @include media-breakpoint-up(lg) {
+            // START: Tablet size
+            width: 50px;
+            height: 50px;
+          } // END: Tablet size
+        }
+      }
+    }
+  }
+}
+/******** END: Card Product ********/

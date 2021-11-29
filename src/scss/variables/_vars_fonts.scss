@@ -1,0 +1,53 @@
+//[1] Font name
+    // Merged Fonts
+    $font-family-regular:       'ux-regular';
+    $font-family-bold:          'ux-bold';
+    $font-family-light:         'ux-light';
+
+    // Splitted Fonts [Ar & En]
+    $font-family-regular-en:    'uxplor-regular-en';
+    $font-family-bold-en:       'uxplor-bold-en';
+    $font-family-light-en:      'uxplor-light-en';
+
+    $font-family-regular-ar:    'uxplor-regular-ar';
+    $font-family-bold-ar:       'uxplor-bold-ar';
+    $font-family-light-ar:      'uxplor-light-ar';
+
+    $font-regular:              $font-family-regular-en, $font-family-regular-ar;
+    $font-bold:                 $font-family-bold-en, $font-family-bold-ar;
+    $font-light:                $font-family-light-en, $font-family-light-ar;
+
+
+//[2] Font size
+    $font-size-base:            1rem !default; // Assumes <html> font size, typically `18px`
+
+    $body-size-2x:              $font-size-base * 1.16 !default;
+    $body-size-3x:              $font-size-base * 1.33 !default;
+
+    $h1-size:                   $font-size-base * 3.55 !default;
+    $h2-size:                   $font-size-base * 3.11 !default;
+    $h3-size:                   $font-size-base * 2.22 !default;
+    $h4-size:                   $font-size-base * 1.55 !default;
+    $h5-size:                   $font-size-base * 1.11 !default;
+    $h6-size:                   $font-size-base !default;
+
+
+
+    $h1-size-2x:                $h1-size * 1.0625 !default;
+    $h2-size-2x:                $h2-size * 1.053  !default;
+    $h3-size-2x:                $h3-size * 1.1 !default;
+    $h4-size-2x:                $h4-size * 1.10 !default;
+    $h5-size-2x:                $h5-size * 1.2 !default;
+    $h6-size-2x:                $body-size-2x !default;
+
+    $h1-size-3x:                $h1-size * 1.125 !default;
+    $h2-size-3x:                $h2-size * 1.10 !default;
+    $h3-size-3x:                $h3-size * 1.2 !default;
+    $h4-size-3x:                $h4-size * 1.21 !default;
+    $h5-size-3x:                $h5-size * 1.4 !default;
+    $h6-size-3x:                $body-size-3x !default;
+
+
+    $small-size:                $font-size-base * 0.77 !default;
+    $small-size-2x:             $font-size-base * 0.88 !default;
+    $small-size-3x:             $font-size-base !default;

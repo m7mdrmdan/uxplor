@@ -1,0 +1,57 @@
+          $color-maincolor: #404252 !important;
+          $color-secondarycolor: #DE1087 !important;
+          img {
+              border-radius: 12px;
+              border: 4px black;
+          }
+          
+          .aboutimg {
+              border: 4px black;
+          }
+          
+          .aboutInfo span,
+          .aboutInfo .pets {
+              color: $color-secondarycolor;
+          }
+          
+          .aboutInfo span,
+          .aboutInfo h3 {
+              font-family: Archivo;
+              font-style: normal !important;
+              font-weight: bold !important;
+              font-size: 32px !important;
+              line-height: 120% !important;
+          }
+          
+          .aboutInfo .pets {
+              font-family: Archivo;
+              font-style: normal;
+              font-weight: normal;
+              line-height: 160% !important;
+              background-color: #FEF8FB !important;
+              border: 1px transparent !important;
+          }
+          
+          .aboutInfo p {
+              font-family: Archivo !important;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px !important;
+              line-height: 160% !important;
+              color: $color-maincolor;
+          }
+          
+          .aboutLogoImage {
+              position: absolute;
+              width: 120px;
+              height: 120px;
+              left: 32px;
+              bottom: 55px;
+              padding: 4rem;
+              background: url(/assets/images/logo.png);
+              background-size: cover;
+              border-radius: 50%;
+              /* Grey/100 */
+              border: 2px solid #F3F4F8;
+              box-sizing: border-box;
+          }

@@ -1,0 +1,9 @@
+<div *ngIf="direction">  
+    <div [dir]="direction" id="bodyContainer" (click)="hideNav($event)">
+        <router-outlet></router-outlet>
+        <router-outlet name="chat"></router-outlet>
+
+
+    </div>
+</div>  
+<!-- <app-spinner></app-spinner> -->

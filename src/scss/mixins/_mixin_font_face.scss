@@ -1,0 +1,22 @@
+// Font Face
+
+@mixin font-face($font-name) {
+
+
+  $font-path: $project-path + "/fonts/" + $font-name + ".woff";
+  font-family: $font-name;
+  src: url($font-path) format("woff");
+}
+
+// Changed English font to ttf only
+@mixin font-face-en($font-name) {
+  $font-path: $project-path + "/fonts/splitted-fonts/en/" + $font-name + ".ttf";
+  font-family: $font-name;
+  src: url($font-path);
+}
+
+@mixin font-face-ar($font-name) {
+  $font-path: $project-path + "/fonts/splitted-fonts/ar/" + $font-name + ".ttf";
+  font-family: $font-name;
+  src: url($font-path);
+}

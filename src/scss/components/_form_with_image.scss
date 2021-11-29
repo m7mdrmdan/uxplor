@@ -1,0 +1,80 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+/******** START: Form With Image ********/
+.form-with-image-container {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $box-shadow-sm;
+
+  // Style image side
+  // Image container
+  .image-container {
+    @include media-breakpoint-up(md) {
+      height: 600px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  // Text and speech mark container styles
+  .speech-text {
+    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    z-index: 2;
+
+    svg {
+      height: 230px;
+    }
+
+    .text-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      color: $white;
+      position: absolute;
+      top: 105px;
+      left: 20px;
+
+      @include media-breakpoint-up(md) {
+        top: 90px;
+        left: 40px;
+      }
+
+      p {
+        font-size: $font-size-lg;
+        @include media-breakpoint-up(md) {
+          font-size: $h5-size-3x;
+        }
+      }
+
+      h4 {
+        @include media-breakpoint-up(md) {
+          font-size: $h3-font-size;
+        }
+      }
+    }
+  }
+
+  // Form side container
+  .form-side {
+    @include media-breakpoint-up(md) {
+      overflow-y: auto;
+      max-height: 600px;
+    }
+  }
+}
+
+/******** END: Form With Image ********/

@@ -1,0 +1,99 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+/******** START: Form container ********/
+.full-page-form {
+  width: 100%;
+  height: calc(100% - 107px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // Set controllers container stiles
+  .controllers-container {
+    .controles-row {
+      display: flex;
+      margin-bottom: 15px;
+      // Set spaces classes
+      .m-start {
+        padding: 0;
+
+        #{$ltr} & {
+          margin-left: (15px/2);
+        }
+
+        #{$rtl} & {
+          margin-right: (15px/2);
+        }
+      }
+
+      .m-end {
+        padding: 0;
+
+        #{$ltr} & {
+          margin-right: (15px/2);
+        }
+
+        #{$rtl} & {
+          margin-left: (15px/2);
+        }
+      }
+
+      .p-end {
+        padding: 0;
+
+        #{$ltr} & {
+          padding-right: (15px/2);
+        }
+
+        #{$rtl} & {
+          padding-left: (15px/2);
+        }
+      }
+
+      // Set styles for select arrows
+      .form-select {
+        position: relative;
+
+        svg {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          background: $white;
+
+          #{$ltr} & {
+            padding-right: 1rem;
+            right: 1px;
+          }
+
+          #{$rtl} & {
+            padding-left: 1rem;
+            left: 1px;
+          }
+        }
+      }
+
+      // set style for valid and invalid inputs and selects
+      .ng-touched {
+        background-image: none;
+        padding-right: 1rem;
+
+        &.ng-invalid {
+          border-color: $color-primary-red;
+        }
+
+        &.ng-valid {
+          border-color: $color-digital-green;
+        }
+      }
+    }
+  }
+
+  // Set disabled button
+  .btn-secondary-dark {
+    pointer-events: none;
+  }
+}
+
+/******** END: Form container ********/

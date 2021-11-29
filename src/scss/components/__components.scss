@@ -1,0 +1,21 @@
+// Components
+// Shared components
+@import "buttons";
+@import "cards";
+@import "tabs";
+@import "progressbar";
+@import "shimmer";
+@import "forms";
+@import "burger_toggle";
+@import "card_action";
+// Project conditions
+
+@import "project-components/components_ng";
+
+/*******
+To Add a specific component to Shared section [UP],
+please move the below @import UP to Shared components
+
+@import "accordion";
+
+*******/

@@ -1,0 +1,204 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+/******** START: Search Form ********/
+
+.search-form {
+  position: relative;
+  //input
+  .form-control {
+    #{$ltr} & {
+      padding-left: 2.5rem;
+    }
+
+    #{$rtl} & {
+      padding-right: 2.5rem;
+    }
+
+    & ~ .btn {
+      // display: none;
+    }
+
+    & ~ .search-form-icon-clear {
+      display: none;
+    }
+
+    &:focus {
+      #{$ltr} & {
+        padding-left: 1rem;
+      }
+
+      #{$rtl} & {
+        padding-right: 1rem;
+      }
+
+      & ~ .search-form-icon {
+        display: none;
+      }
+
+      & ~ .search-form-icon-clear {
+        display: flex;
+      }
+
+      @include media-breakpoint-up(lg) {
+        & ~ .btn {
+          display: flex;
+        }
+        #{$ltr} & {
+          padding-left: 2.5rem;
+        }
+        #{$rtl} & {
+          padding-right: 2.5rem;
+        }
+        & ~ .search-form-icon {
+          display: flex;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      #{$ltr} & {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      #{$rtl} & {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  //icons
+  &-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    line-height: 1;
+
+    #{$ltr} & {
+      left: 1rem;
+    }
+
+    #{$rtl} & {
+      right: 1rem;
+    }
+
+    &-clear {
+      -webkit-appearance: none !important;
+      right: 1rem;
+
+      #{$ltr} & {
+        right: 1rem;
+        left: auto;
+      }
+
+      #{$rtl} & {
+        left: 1rem;
+        right: auto;
+      }
+
+      @include media-breakpoint-up(lg) {
+        #{$ltr} & {
+          right: 10rem;
+        }
+        #{$rtl} & {
+          left: 10rem;
+        }
+      }
+    }
+  }
+
+  //button
+  .btn {
+    display: none;
+    padding: 0.80rem 1.25rem;
+
+    &:focus {
+      border-color: $color-primary-red;
+    }
+
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      display: inline-block;
+      // position: absolute;
+      // top: 0;
+      // height: 100%;
+      #{$ltr} & {
+        // right: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      #{$rtl} & {
+        // left: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      // END: Desktop size
+    }
+  }
+
+  &.search-form-with-out-button {
+
+    .form-control {
+      @include media-breakpoint-up(lg) {
+        #{$ltr} & {
+          border-top-right-radius: $input-border-radius;
+          border-bottom-right-radius: $input-border-radius;
+        }
+        #{$rtl} & {
+          border-top-left-radius: $input-border-radius;
+          border-bottom-left-radius: $input-border-radius;
+        }
+      }
+    }
+
+
+    .search-form-icon {
+      &-clear {
+        @include media-breakpoint-up(lg) {
+          #{$ltr} & {
+            right: 1rem;
+          }
+          #{$rtl} & {
+            left: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.search-form-with-select {
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      align-items: baseline;
+    }
+
+    .form-select {
+      position: relative;
+      min-width: auto;
+      margin-bottom: 1rem;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+
+        #{$ltr} & {
+          margin-right: 1rem;
+        }
+
+        #{$rtl} & {
+          margin-left: 1rem;
+        }
+      }
+
+      select {
+        height: 100%;
+        border-radius: $border-radius;
+      }
+    }
+  }
+}
+
+/******** END: Search Form ********/

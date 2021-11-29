@@ -1,0 +1,48 @@
+// Button
+
+// Button basics
+@mixin button( $btn-size, $btn-radius, $btn-shadow ) {
+  appearance: none;
+  background-color: $color-transparent;
+  padding: $font-size-base * 0.85 $font-size-base * 1.25;
+  margin-bottom: $font-size-base * 0.5;
+  font-size: $btn-size;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1;
+  border: 1px solid $color-transparent;
+  border-radius: $btn-radius;
+  box-shadow: $btn-shadow;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border-color: $color-secondary-aqua-blue;
+  }
+
+  @include media-breakpoint-up(sm) {  // START: Mobile (Landscape) size
+    margin-bottom: $font-size-base * 0.3;
+  }  // END: Mobile (Landscape) size
+
+  @include media-breakpoint-up(md) {  // START: Tablet size
+    padding: $font-size-base * 0.75 $font-size-base * 1.25; // for large
+  }  // END: Tablet size
+}
+
+
+// Button coloring
+@mixin button-coloring( $color, $bg-color, $border-color, $hover-color, $hover-bg-color, $hover-border-color ) {
+  color: $color;
+  background-color: $bg-color;
+  border-color: $border-color;
+
+  &:hover {
+    color: $hover-color;
+    background-color: $hover-bg-color;
+    border-color: $hover-border-color;
+  }
+}

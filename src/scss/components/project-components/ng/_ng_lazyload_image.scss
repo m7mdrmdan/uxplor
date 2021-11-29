@@ -1,0 +1,13 @@
+[class*="ng-lazy"] {
+  transition: all 0.2s ease;
+}
+
+.ng-lazy {
+  &loading {
+    opacity: 0;
+  }
+  
+  &loaded {
+    opacity: 1;
+  }
+}

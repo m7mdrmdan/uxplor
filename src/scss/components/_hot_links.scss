@@ -1,0 +1,100 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: List Links ********/
+.list {
+  &-links {
+    list-style: none;
+  }
+
+  &-item {
+    .list-link-striped & {
+      border-bottom: 1px dotted $color-monochrome-silver;
+      
+      &:first-child {
+        border-top: 1px dotted $color-monochrome-silver;
+      }
+    }
+
+    .list-link-card & {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.link {
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    
+    .list-link-striped & {
+      padding: 1rem 0.25rem;
+    }
+
+    .list-link-card & {
+      background-color: $color-white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  &-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+
+    &-icon {
+      display: inline-block;
+
+      #{$ltr} & {
+        margin-right: 1rem;
+      }
+      #{$rtl} & {
+        margin-left: 1rem;
+      }
+      
+      .search-list-pages & {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $color-monochrome-aluminium;
+        border-radius: 50%;
+
+        #{$ltr} & {
+          margin-right: 1rem;
+        }
+        #{$rtl} & {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .result {
+      .search-result & {
+        color: $color-primary-red;
+      }
+    }
+  }
+
+  &-chevron {
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+    #{$rtl} & {
+      transform: rotate(-180deg);
+    }
+
+    & > * {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+/******** START: List Links ********/

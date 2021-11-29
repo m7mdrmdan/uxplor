@@ -1,0 +1,387 @@
+// Imports
+@import "../imports/functions";
+
+/******** Start: Custom Controls ********/
+.custom-control {
+  padding: 0 !important;
+  display: inline-block;
+  position: relative;
+  // display: block;
+  min-height: 30px;
+  // #{$ltr} & {
+  //   padding-left: 2.4rem;
+  // }
+  // #{$rtl} & {
+  //   padding-right: 2.4rem;
+  // }
+  .custom-control-span {
+    #{$ltr} & {
+      margin-left: 5px;
+    }
+    #{$rtl} & {
+      margin-right: 5px;
+    }
+  }
+}
+
+.custom-control-input {
+  // position: absolute;
+  // z-index: -1; // Put the input behind the label so it doesn't overlay text
+  // opacity: 0;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+
+  &:checked ~ .custom-control-label::before {
+    border-color: $color-secondary-aqua-blue;
+    background: $color-secondary-aqua-blue;
+  }
+
+  &:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: $color-monochrome-mid-grey;
+  }
+
+  // &:not(:disabled):active ~ .custom-control-label::before {
+  //   color: $custom-control-indicator-active-color;
+  //   background-color: $custom-control-indicator-active-bg;
+  //   border-color: $custom-control-indicator-active-border-color;
+  //   // @include box-shadow($custom-control-indicator-active-box-shadow);
+  // }
+
+  &:disabled {
+    ~ .custom-control-label {
+      &::before {
+        background-color: $color-monochrome-light-grey;
+        border-color: $color-monochrome-aluminium;
+      }
+    }
+  }
+  /////////////////////////////////
+  // &:focus ~ .custom-control-label::before {
+  //   box-shadow: none !important;
+  // }
+  // &:disabled ~ .custom-control-label::before {
+  //   background-color: $color-monochrome-light-grey;
+  //   border-color: $color-monochrome-aluminium;
+  // }
+  // &:checked ~ .custom-control-label::before {
+  //   border-color: $color-secondary-aqua-blue;
+  //   background-color: $color-secondary-aqua-blue;
+  // }
+  // &:focus:not(:checked) ~ .custom-control-label::before {
+  //   border-color: $color-monochrome-mid-grey;
+  // }
+}
+
+.custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  vertical-align: top;
+  cursor: pointer;
+
+  position: relative;
+  width: 24px;
+  height: 24px;
+  // background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // Background-color and (when enabled) gradient
+  &::before {
+    position: absolute;
+    top: ($font-size-base * $line-height-base - $custom-control-indicator-size) /
+      2;
+    left: -($custom-control-gutter + $custom-control-indicator-size);
+    display: block;
+    width: $custom-control-indicator-size;
+    height: $custom-control-indicator-size;
+    pointer-events: none;
+    content: "";
+    background-color: $custom-control-indicator-bg;
+    border: $custom-control-indicator-border-color solid
+      $custom-control-indicator-border-width;
+    // @include box-shadow($custom-control-indicator-box-shadow);
+    width: 24px;
+    height: 24px;
+    position: initial !important;
+  }
+
+  // Foreground (icon)
+  &::after {
+    position: absolute;
+    top: ($font-size-base * $line-height-base - $custom-control-indicator-size) /
+      2;
+    left: -($custom-control-gutter + $custom-control-indicator-size);
+    display: block;
+    width: $custom-control-indicator-size;
+    height: $custom-control-indicator-size;
+    content: "";
+    background: no-repeat 50% / 70% 70%;
+
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 50% !important;
+    right: auto !important;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /********/
+  padding-top: 0;
+  // padding-top: 0.1rem;
+  // &:before {
+  //   height: 1.87rem;
+  //   width: 1.87rem;
+  //   top: 0;
+  //   border: 1px solid $color-monochrome-mid-grey;
+  //   #{$ltr} & {
+  //     left: -2.4rem;
+  //   }
+  //   #{$rtl} & {
+  //     right: -2.4rem;
+  //     left: auto;
+  //   }
+  // }
+  // &:after {
+  //   width: 1.3rem;
+  //   height: 1.3rem;
+  //   background-size: auto;
+  //   top: 0.29rem;
+  //   #{$ltr} & {
+  //     left: -2.1rem;
+  //   }
+  //   #{$rtl} & {
+  //     right: -2.14rem;
+  //   }
+  //   @include media-breakpoint-up(md) {
+  //     top: 0.3rem;
+  //   }
+  // }
+}
+
+// Checkboxes
+.custom-checkbox {
+  .custom-control-label::before {
+    border-radius: 6px;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-image: $custom-checkbox-indicator-icon-checked;
+    }
+  }
+}
+
+// Radios
+.custom-radio {
+  // padding: 0 !important;
+  // display: inline-block;
+  // .custom-control-label{
+  //   position: relative;
+  //   width: 30px;
+  //   height: 30px;
+  //   background: #ccc;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  .custom-control-input ~ .custom-control-label::before {
+    // position: initial !important;
+  }
+  .custom-control-label::before {
+    border-radius: 50px;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      border-color: $color-monochrome-mid-grey;
+      background: $white;
+    }
+    &::after {
+      background-image: $custom-radio-indicator-icon-checked;
+      background-image: none;
+      background: $color-secondary-aqua-blue;
+      border-radius: 50px;
+
+      //   position: absolute;
+      // left: 50% !important;
+      // right: auto !important;
+      // top: 50%;
+      // transform: translate(-50%, -50%);
+    }
+  }
+  .custom-control-input {
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 100%;
+    // z-index: 1;
+    // cursor: pointer;
+    // position: absolute;
+    // opacity: 0;
+  }
+  // .custom-control-span{
+  //   #{$ltr} & {
+  //     margin-left: 5px;
+  //   }
+  //   #{$rtl} & {
+  //     margin-right: 5px;
+  //   }
+  // }
+}
+// .custom-control.custom-radio{
+//   padding: 0 !important;
+//   display: inline-block;
+//   .custom-control-label{
+//     position: relative;
+//     width: 30px;
+//     height: 30px;
+//     background: #ccc;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+//   .custom-control-input ~ .custom-control-label::before {
+//     position: initial !important;
+//   }
+//   .custom-control-input:checked ~ .custom-control-label::after {
+//     position: absolute;
+//     left: 50% !important;
+//     right: auto !important;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+//   .custom-control-input{
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1;
+//     cursor: pointer;
+//     position: absolute;
+//     opacity: 0;
+//   }
+//   .custom-control-span{
+//     #{$ltr} & {
+//       margin-left: 5px;
+//     }
+//     #{$rtl} & {
+//       margin-right: 5px;
+//     }
+//   }
+// }
+
+// switches
+.custom-switch {
+  padding-left: $custom-switch-width + $custom-control-gutter;
+
+  .custom-control-label {
+    width: 50px;
+    height: 30px;
+    &::before {
+      left: -($custom-switch-width + $custom-control-gutter);
+      width: $custom-switch-width;
+      pointer-events: all;
+      // stylelint-disable-next-line property-blacklist
+      border-radius: $custom-switch-indicator-border-radius;
+      width: 100%;
+      border-radius: 50px;
+      height: 100%;
+      border-color: $color-monochrome-aluminium;
+      background: #f5f5f5;
+    }
+
+    &::after {
+      top: calc(
+        #{(
+            (
+                $font-size-base * $line-height-base -
+                  $custom-control-indicator-size
+              ) / 2
+          )} + #{$custom-control-indicator-border-width * 2}
+      );
+      left: calc(
+        #{- ($custom-switch-width + $custom-control-gutter)} + #{$custom-control-indicator-border-width *
+          2}
+      );
+      width: $custom-switch-indicator-size;
+      height: $custom-switch-indicator-size;
+      background-color: $custom-control-indicator-border-color;
+      // stylelint-disable-next-line property-blacklist
+      border-radius: $custom-switch-indicator-border-radius;
+      @include transition(
+        transform 0.15s ease-in-out,
+        $custom-forms-transition
+      );
+      top: 0;
+      width: 1.87rem;
+      height: 1.87rem;
+      border-radius: 50px;
+      background: $white;
+      border: 1px solid $color-monochrome-aluminium;
+      width: 30px;
+      height: 100%;
+      left: 0 !important;
+      top: 0 !important;
+      transform: translate(0, 0);
+      #{$ltr} & {
+        left: 0 !important;
+        right: auto;
+      }
+      #{$rtl} & {
+        right: 0 !important;
+        left: auto;
+      }
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-color: $custom-control-indicator-bg;
+      transform: translateX(1.5rem);
+    }
+  }
+
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: $color-monochrome-aluminium;
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: $custom-control-indicator-checked-disabled-bg;
+    }
+  }
+  .custom-control-input:checked {
+    ~ .custom-control-label::after {
+      #{$ltr} & {
+        transform: translateX(20px);
+      }
+      #{$rtl} & {
+        transform: translateX(-20px);
+      }
+    }
+    ~ .custom-control-label::before {
+      background: $color-secondary-aqua-blue;
+    }
+  }
+  ~ .custom-control-label::before,
+  &:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: $color-monochrome-aluminium;
+    background: $color-monochrome-light-grey;
+  }
+}
+
+/******** END: Custom Controls ********/

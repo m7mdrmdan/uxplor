@@ -1,0 +1,48 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: Hello ********/
+.hello {
+  position: relative;
+  overflow: hidden;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    min-height: 160px;
+
+    @include media-breakpoint-up(sm) {
+      // START: Tablet size
+      min-height: 200px;
+      // END: Tablet size
+    }
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      min-height: 360px;
+      // END: Desktop size
+    }
+  }
+
+  &-title{
+    line-height: 1.1;
+    font-size: $h3-size;
+    margin: 55px 0;
+    @extend .font-light;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1.5s ease-in-out;
+    
+    &.animation-startup {
+      opacity: 0;
+      transform: translateY(-75%);
+    }
+    
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      font-size: $h1-size-2x;
+      margin: 120px 0;
+      // END: Desktop size
+    }
+  }
+}
+/******** END: Hello ********/

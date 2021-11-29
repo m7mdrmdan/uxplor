@@ -1,0 +1,76 @@
+// Font style
+
+@mixin font-regular($important: "") {
+  @if $important == true {
+    $important: !important;
+  } @else {
+    $important: "";
+  }
+
+  font-family: $font-family-regular, sans-serif unquote($important);
+
+  // For Safari Support
+  @supports ((-webkit-marquee-repetition: infinite) and (object-fit: fill)) or (-webkit-appearance:caret) {
+    font-family: $font-regular unquote($important);
+  }
+
+  // For IE 9+ Support
+  @media screen and (min-width: 0\0) {
+    font-family: $font-regular unquote($important);
+  }
+
+  // For Edge  Support
+  @supports (-ms-ime-align: auto) {
+    font-family: $font-regular unquote($important);
+  }
+}
+
+@mixin font-bold($important: "") {
+  @if $important == true {
+    $important: !important;
+  } @else {
+    $important: "";
+  }
+
+  font-family: $font-family-bold, sans-serif unquote($important);
+
+  // For Safari Support
+  @supports ((-webkit-marquee-repetition: infinite) and (object-fit: fill)) or (-webkit-appearance:caret) {
+    font-family: $font-bold unquote($important);
+  }
+
+  // For IE 9+ Support
+  @media screen and (min-width: 0\0) {
+    font-family: $font-bold unquote($important);
+  }
+
+  // For Edge  Support
+  @supports (-ms-ime-align: auto) {
+    font-family: $font-bold unquote($important);
+  }
+}
+
+@mixin font-light($important: "") {
+  @if $important == true {
+    $important: !important;
+  } @else {
+    $important: "";
+  }
+
+  font-family: $font-family-light, sans-serif unquote($important);
+
+  // For Safari Support
+  @supports ((-webkit-marquee-repetition: infinite) and (object-fit: fill)) or (-webkit-appearance:caret) {
+    font-family: $font-light unquote($important);
+  }
+
+  // For IE 9+ Support
+  @media screen and (min-width: 0\0) {
+    font-family: $font-light unquote($important);
+  }
+
+  // For Edge  Support
+  @supports (-ms-ime-align: auto) {
+    font-family: $font-light unquote($important);
+  }
+}

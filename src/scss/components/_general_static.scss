@@ -1,0 +1,17 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+/******** START: General Static ********/
+.service-side-img {
+  .flex-row-reverse & {
+    #{$ltr} & {
+      text-align: right;
+    }
+
+    #{$rtl} & {
+      text-align: left;
+    }
+  }
+}
+/******** END: General Static ********/

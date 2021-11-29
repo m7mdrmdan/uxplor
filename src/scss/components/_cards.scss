@@ -1,0 +1,89 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: Card ********/
+.card {
+  &:not(.panel):not(.accordion-item) {
+    padding: $card-padding-y $card-padding-x;
+    margin-bottom: 1rem;
+    background-color: $color-white;
+    overflow: hidden;
+  }
+
+  &-collapsing {
+    .collapse-btn {
+      width: 100%;
+      margin: 0;
+      background-color: $color-white;
+      box-shadow: none;
+      border-top: 1px solid $color-transparent;
+      border-radius: 0;
+      font-size: $body-size-2x;
+
+      &:focus {
+        border-color: transparent;
+      }
+    }
+
+    .icon-chevron {
+      color: $main-color;
+      transform: scaleY(-1);
+      filter: fliph;
+      transition: all 0.25s linear;
+
+      #{$ltr} & {
+        margin-left: 0.5rem;
+      }
+
+      #{$rtl} & {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-list {
+      &-item {
+        display: flex;
+        align-items: baseline;
+        position: relative;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+
+          .list-small & {
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        &-icon {
+          fill: $color-digital-green;
+
+          #{$ltr} & {
+            margin-right: 0.5rem;
+          }
+
+          #{$rtl} & {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &-switch-spoc {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      height: 100%;
+      margin-bottom: 0;
+      // END: Desktop size
+    }
+  }
+
+  &-visible{
+    overflow: inherit !important;
+  }
+}
+/******** START: Card ********/

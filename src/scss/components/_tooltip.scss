@@ -1,0 +1,57 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: Tooltip ********/
+.tooltip {
+  background: $color-monochrome-aluminium;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 1rem;
+  position: relative;
+  border-radius: 0.7rem;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #ebebeb;
+    position: absolute;
+    bottom: -7px;
+    #{$ltr} & {
+      left: 20px;
+    }
+    #{$rtl} & {
+      right: 20px;
+    }
+  }
+
+  &-link {
+    text-decoration: underline;
+    @include font-bold;
+  }
+
+  &-icon {
+    #{$ltr} & {
+      margin-right: 0.5rem;
+    }
+    #{$rtl} & {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &-yellow {
+    background: $color-secondary-yellow-warning;
+    color: $color-white;
+
+    &:before {
+      border-bottom: 8px solid $color-secondary-yellow-warning;
+      border-top: 0;
+      top: -7px;
+      bottom: auto;
+    }
+  }
+}
+/******** END: Tooltip ********/

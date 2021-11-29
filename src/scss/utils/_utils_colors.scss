@@ -1,0 +1,9 @@
+// Colors
+
+.color {
+  @each $color in $uxplor-colors {
+    &-#{ "" + nth($color, 1) } {
+      color: nth($color, 2);
+    }
+  }
+}

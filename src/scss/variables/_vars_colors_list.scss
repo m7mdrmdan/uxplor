@@ -1,0 +1,40 @@
+$uxplor-colors : (
+  // Primary colours
+  red:                              $color-primary-red,
+  grey:                             $color-primary-grey,
+  white:                            $color-primary-white,
+  light-red:                        $color-primary-light-red,
+
+
+  // Secondary colours
+  turquoise:                        $color-secondary-turquoise,
+  aqua-blue:                        $color-secondary-aqua-blue,
+  metallic-seaweed:                        $color-secondary-metallic-seaweed,
+  trypan-blue:                        $color-secondary-trypan-blue,
+  citron:                        $color-secondary-citron,
+  phlox:                        $color-secondary-phlox,
+  aubergine:                        $color-secondary-aubergine,
+  red-violet:                       $color-secondary-red-violet,
+  spring-green:                     $color-secondary-spring-green,
+  go-green:                     $color-secondary-go-green,
+  fresh-orange:                     $color-secondary-fresh-orange,
+  lemon-yellow:                     $color-secondary-lemon-yellow,
+
+
+  // Digital colours
+  green:                            $color-digital-green,
+  maroon:                           $color-digital-maroon,
+  dark-red:                         $color-digital-dark-red,
+
+
+  // Monochrome colours
+  black:                            $color-monochrome-black,
+  dark-grey:                        $color-monochrome-dark-grey,
+  anthracite:                       $color-monochrome-anthracite,
+  mid-grey:                         $color-monochrome-mid-grey,
+  platinum:                         $color-monochrome-platinum,
+  silver:                           $color-monochrome-silver,
+  aluminium:                        $color-monochrome-aluminium,
+  light-grey:                       $color-monochrome-light-grey,
+  transparent:                      $color-monochrome-transparent
+);

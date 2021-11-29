@@ -1,0 +1,219 @@
+//[1]  Font Faces & Root
+
+//[1.1] Merged Fonts
+@font-face {
+  @include font-face($font-family-regular);
+}
+
+@font-face {
+  @include font-face($font-family-bold);
+}
+
+@font-face {
+  @include font-face($font-family-light);
+}
+
+//[1.2]  Splitted Fonts [Ar & En]
+@font-face {
+  @include font-face-en($font-family-regular-en);
+}
+
+@font-face {
+  @include font-face-en($font-family-bold-en);
+}
+
+@font-face {
+  @include font-face-en($font-family-light-en);
+}
+
+@font-face {
+  @include font-face-ar($font-family-regular-ar);
+}
+
+@font-face {
+  @include font-face-ar($font-family-bold-ar);
+}
+
+@font-face {
+  @include font-face-ar($font-family-light-ar);
+}
+
+html {
+  font-size: 14px;
+
+  @include media-breakpoint-up(md) {
+    // START: Tablet size
+    font-size: 16px;
+  }
+
+  // END: Tablet size
+}
+
+body {
+  @extend .font-regular;
+}
+
+//[2]  Paragraphs
+.text {
+  &-normal {
+    font-size: $font-size-base;
+  }
+
+  &-2x {
+    font-size: $body-size-2x;
+  }
+
+  &-3x {
+    font-size: $body-size-3x;
+  }
+}
+
+//[3]  Headings
+
+//[3.1]  General
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+//[3.1]  Size normal
+h1,
+.h1 {
+  font-size: $h1-size;
+  @include h1;
+}
+
+h2,
+.h2 {
+  font-size: $h2-size;
+  @include h2;
+}
+
+h3,
+.h3 {
+  font-size: $h3-size;
+  @include h3;
+}
+
+h4,
+.h4 {
+  font-size: $h4-size;
+}
+
+h5,
+.h5 {
+  font-size: $h5-size;
+}
+
+h6,
+.h6 {
+  font-size: $h6-size;
+}
+
+//[3.2]  Size 2x
+.h1 {
+  &-2x {
+    font-size: $h1-size-2x;
+    @include h1;
+  }
+
+  &-3x {
+    font-size: $h1-size-3x;
+    @include h1;
+  }
+}
+
+.h2 {
+  &-2x {
+    font-size: $h2-size-2x;
+    @include h2;
+  }
+
+  &-3x {
+    font-size: $h2-size-3x;
+    @include h2;
+  }
+}
+
+.h3 {
+  &-2x {
+    font-size: $h3-size-2x;
+    @include h3;
+  }
+
+  &-3x {
+    font-size: $h3-size-3x;
+    @include h3;
+  }
+}
+
+.h4 {
+  &-2x {
+    font-size: $h4-size-2x;
+  }
+
+  &-3x {
+    font-size: $h4-size-3x;
+  }
+}
+
+.h5 {
+  &-2x {
+    font-size: $h5-size-2x;
+  }
+
+  &-3x {
+    font-size: $h5-size-3x;
+  }
+}
+
+.h6 {
+  &-2x {
+    font-size: $h6-size-2x;
+  }
+
+  &-3x {
+    font-size: $h6-size-3x;
+  }
+}
+
+
+
+
+
+
+
+//[4]  Small
+
+//[4.1]  Size normal
+small,
+.small {
+  font-size: $small-size;
+}
+
+//[4.2]  Size 2x
+.small-2x {
+  font-size: $small-size-2x;
+}
+
+//[4.3]  Size 3x
+.small-3x {
+  font-size: $small-size-3x;
+}
+
+//[5]  Strong & Bold
+strong,
+.bold {
+  @extend .font-bold;
+}

@@ -1,0 +1,41 @@
+// Radius
+
+.radius {
+  border-radius: $font-size-base * .5;
+
+  &-2x { border-radius:  $font-size-base * 1 }
+  &-3x { border-radius:  $font-size-base * 1.4 }
+  &-circle { border-radius:  $font-size-base * 99 }
+
+  &-t {
+    border-top-left-radius: $font-size-base * .5;
+    border-top-right-radius: $font-size-base * .5;
+  }
+
+  &-b {
+    border-bottom-left-radius: $font-size-base * .5;
+    border-bottom-right-radius: $font-size-base * .5;
+  }
+
+  &-start {
+    #{$ltr-global} & {
+      border-top-left-radius: $font-size-base * .5;
+      border-bottom-left-radius: $font-size-base * .5;
+    }
+    #{$rtl-global} & {
+      border-top-right-radius: $font-size-base * .5;
+      border-bottom-right-radius: $font-size-base * .5;
+    }
+  }
+
+  &-end {
+    #{$ltr-global} & {
+      border-top-right-radius: $font-size-base * .5;
+      border-bottom-right-radius: $font-size-base * .5;
+    }
+    #{$rtl-global} & {
+      border-top-left-radius: $font-size-base * .5;
+      border-bottom-left-radius: $font-size-base * .5;
+    }
+  }
+}

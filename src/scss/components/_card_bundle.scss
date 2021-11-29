@@ -1,0 +1,360 @@
+// Imports
+@import "../imports/functions";
+@import "../components/checkbox_radio";
+@import "../utils/utils_font";
+// Mixins card_bundle
+@mixin _card_bundle_progress-bar {
+  .progress-bar {
+    background-color: $color-secondary-fresh-orange;
+  }
+}
+@mixin _card_bundle_progress-bar-roaming {
+  .progress-bar {
+    background-color: $color-secondary-lemon-yellow;
+  }
+}
+
+@mixin _card_bundle_card-header-icon {
+  #{$ltr} & {
+    margin-right: 8px;
+  }
+  #{$rtl} & {
+    margin-left: 8px;
+  }
+}
+
+@mixin _accordion_height($deep: "") {
+  #{$deep} .panel-collapse.collapse.in.show{
+    animation: none !important;
+  }
+}
+
+/******** START: Card Bundle ********/
+
+.card {
+  &-bundle {
+    padding: $card-padding-y $card-padding-x;
+    margin-bottom: 1rem;
+    background-color: $color-white;
+    border: 1px solid $color-transparent;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    p,
+    span,
+    small,
+    strong {
+      line-height: 1;
+      vertical-align: baseline;
+    }
+    &.card-warning,
+    .card-warning {
+      border-color: $color-secondary-fresh-orange;
+      .card-used-data {
+        color: $color-secondary-fresh-orange;
+      }
+      // Project conditions
+      @if $project-path==$path-ng {
+        #{$ng-deep} {
+          @include _card_bundle_progress-bar;
+        }
+      } @else if $project-path==$path-static {
+        @include _card_bundle_progress-bar;
+      }
+    }
+    .card-roaming-bar {
+      // Project conditions
+      @if $project-path==$path-ng {
+        #{$ng-deep} {
+          @include _card_bundle_progress-bar-roaming;
+        }
+      } @else if $project-path==$path-static {
+        @include _card_bundle_progress-bar-roaming;
+      }
+    }
+    &-adon {
+      display: flex;
+      align-items: center;
+      background: $color-monochrome-light-grey;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      border-radius: $border-radius-default;
+    }
+    &.card-bundle-master {
+      &.card-disabled {
+        &::after {
+          display: none;
+        }
+        .card {
+          &-header-title,
+          &-usage {
+            position: relative;
+            &::after {
+              content: "";
+              @extend %card-disabled;
+              background-color: rgba(255, 255, 255, 0.7);
+            }
+          }
+        }
+      }
+    }
+
+    &-btn-summary {
+      height: 32px;
+      background-color: lighten($color-black, 70%);
+      margin: 0 0 0.75rem;
+      transition: all 0.2s ease;
+      border-radius: 6px;
+      cursor: pointer;
+      overflow: hidden;
+
+      &:hover {
+        background-color: $color-transparent;
+      }
+
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        height: 36px;
+        // END: Tablet size
+      }
+
+      & > img {
+        opacity: 0.9;
+      }
+    }
+  }
+  // Card Header
+  &-header {
+    margin-bottom: 1.25rem;
+    &-title {
+      display: flex;
+      align-items: center;
+    }
+    &-icon {
+      // Project conditions
+      @if $project-path==$path-ng {
+        #{$ng-deep} & {
+          @include _card_bundle_card-header-icon;
+        }
+      } @else if $project-path==$path-static {
+        @include _card_bundle_card-header-icon;
+      }
+    }
+  }
+
+  // Card Body
+  &-body {
+    &-title {
+      margin: 0;
+      overflow-wrap: break-word;
+    }
+    &-subtitle {
+      margin-top: 0.5rem;
+      color: $color-monochrome-mid-grey;
+    }
+    &-icon {
+      &.flex-manage-bar-icon {
+        #{$ltr} & {
+          margin-right: 2rem;
+        }
+        #{$rtl} & {
+          margin-left: 2rem;
+        }
+      }
+      #{$ltr} & {
+        margin-right: 0.75rem;
+      }
+      #{$rtl} & {
+        margin-left: 0.75rem;
+      }
+    }
+    &-btn {
+      width: 100%;
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        margin-top: 0;
+      }
+      .card-bundle-wallet & {
+        @include media-breakpoint-down(md) {
+          // START: Tablet size
+          padding: 0.75rem;
+        }
+      }
+      // END: Tablet size
+    }
+  }
+
+  // Card Footer
+  &-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid $color-monochrome-silver;
+    & > .row {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+        @include media-breakpoint-up(md) {
+          // START: Tablet size
+          margin-bottom: 1.25rem;
+        }
+        // END: Tablet size
+      }
+    }
+    &-btn {
+      margin: 0.25rem 0 0;
+      padding: 0;
+      color: $color-primary-red;
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        margin: 0;
+      }
+      // END: Tablet size
+    }
+  }
+
+  &-usage {
+    p {
+      margin: 0;
+    }
+    // span {
+    //   white-space: pre-wrap;
+    // }
+    &-icon {
+      #{$ltr} & {
+        margin-right: 0.5rem;
+      }
+      #{$rtl} & {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+/******** END: Card Bundle ********/
+
+/******** START: Card Bundle Flex ********/
+.card {
+  &-bundle {
+    &-flex {
+      padding: 0 1rem 1rem 1rem;
+      .card-used-data {
+        color: $color-primary-red;
+        // @include font-regular;
+      }
+      .card-body-subtitle {
+        color: $color-monochrome-dark-grey;
+        font-size: 14px;
+      }
+      &.card-warning,
+      .card-warning {
+        border: 0;
+      }
+    }
+    .card-warning {
+      .qouta {
+        color: $color-secondary-fresh-orange;
+      }
+    }
+    &-expire {
+      &-icon {
+        #{$ltr} & {
+          margin-right: 1rem;
+        }
+        #{$rtl} & {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+  &-more-usage {
+    &-btn {
+      // d-flex justify-content-between align-items-center mt-3 border-top w-100 p-0 border-0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 0;
+      border-top: 1px solid $color-monochrome-light-grey;
+      background: $color-white;
+      width: 100%;
+      padding: 0.5rem 0;
+
+      &-icon {
+        transition: all 0.3s ease;
+
+        .panel-open & {
+          transform: scaleY(-1);
+        }
+      }
+    }
+    // Project condition for safari issue in accordion in more usage component
+    @if $project-path == $path-ng {
+      @include _accordion_height($ng-deep);
+    } @else if $project-path == $path-static {
+      @include _accordion_height();
+    }
+  }
+}
+
+/******** END: Card Bundle Flex ********/
+
+/******** START: Card Bundle - Shimmer ********/
+
+.shimmer {
+  &-title {
+    width: 75%;
+    &-icon {
+      // Project conditions
+      // @if $project-path==$path-ng {
+      //   #{$ng-deep} & {
+      //   }
+      // }
+      // @else if $project-path==$path-static {
+      // }
+    }
+    @include media-breakpoint-up(md) {
+      // START: Tablet size
+      width: 60%;
+    }
+    // END: Tablet size
+    .bundle-master & {
+      width: 50%;
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        width: 40%;
+        // END: Tablet size
+      }
+    }
+  }
+  &-subtitle {
+    width: 50%;
+    @include media-breakpoint-up(md) {
+      // START: Tablet size
+      width: 40%;
+    }
+    // END: Tablet size
+  }
+  &-btn {
+    .card-body & {
+      margin-top: 1rem;
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        margin-top: 0;
+      }
+      // END: Desktop size
+    }
+  }
+  &-icon {
+    // Project conditions
+    // @if $project-path==$path-ng {
+    //   #{$ng-deep} & {
+    //   }
+    // }
+    // @else if $project-path==$path-static {
+    // }
+  }
+}
+
+/******** END: Card Bundle - Shimmer ********/

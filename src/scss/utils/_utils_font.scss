@@ -1,0 +1,37 @@
+// Font family
+
+.font {
+  // .font-regular
+  &-regular {
+    @include font-regular;
+  }
+
+  // .font-bold
+  &-bold {
+    @include font-bold;
+  }
+
+  // .font-light
+  &-light {
+    @include font-light;
+  }
+  
+  // Customize with screen sizes
+  @each $item in map-keys($container-max-widths) {
+    &-#{$item} {
+      @include media-breakpoint-up(#{$item}) {
+        &-light {
+          @include font-light;
+        }
+        
+        &-regular {
+          @include font-regular;
+        }
+      
+        &-bold {
+          @include font-bold;
+        }
+      }
+    }
+  }
+}

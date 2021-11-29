@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-lg-12 mb-4 mb-md-0">
+        <div class="mt-3 mb-3">
+            <h2 class="font-bold h4-2x mb-0">Trending products</h2>
+        </div>
+        <div class="horizontal-scroll scroll-shadow-dark">
+            <div class="row align-items-start table-md">
+                <div class="col-3 table-cell-md" *ngFor="let item of [1,2,3,4]">
+
+                    <!--------- START: Card action --------->
+                    <div class="card-action radius shadow-sm" [ngClass]="[cardStyle, cardSize]">
+                        <a href="#" (click)="onClick($event)" class="w-100">
+                            <div class="card-action-body">
+                                <div>
+                                    <h4 class="font-bold h5-2x m-0">title here</h4>
+                                    <p class="m-0">description here</p>
+                                </div>
+                            </div>
+                            <div class="card-action-img">
+                                <picture>
+                                    <!-- Small screen image -->
+                                    <!-- <source  media="(max-width: 575px)" srcset=""> -->
+                                    <!-- Medium screen image -->
+                                    <!-- <source  media="(max-width: 991px)" srcset=""> -->
+                                    <!-- Large and default screen image -->
+                                    <img src="https://web.vodafone.com.eg/documents/31803/0/Find US.png/ff883329-95b8-6406-dffd-9d0bb3bf04f4" alt="action-image">
+                                </picture>
+                            </div>
+                        </a>
+                    </div>
+                    <!--------- END: Card action --------->
+
+                    <!--------- START: Card action shimmer --------->
+                    <div class="card-action radius shadow-sm d-none" [ngClass]="[cardStyle, cardSize]">
+                        <a href="" class="w-100">
+                            <div class="card-action-body">
+                                <div></div>
+                                <div>
+                                    <div class="shimmer-bg shimmer-title w-50"></div>
+                                    <div class="shimmer-bg shimmer-content m-0 w-75"></div>
+                                </div>
+                            </div>
+                            <div class="card-action-img">
+                                <div class="shimmer-bsg h-100"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--------- END: Card action shimmer --------->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

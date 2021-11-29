@@ -1,0 +1,113 @@
+// Imports
+@import "../imports/functions";
+
+$burgertoggle-color: lighten($color-monochrome-dark-grey, 15%);
+$burgertoggle-width: calc( 100% + 7px);
+$burgertoggle-line: 1px;
+$burgertoggle-line-space: 8px;
+$burgertoggle-transition: all 0.3s ease-in-out;
+
+
+
+/******** START: Burger toggle ********/
+.burger-toggle {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  .checker {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    &:checked {
+      + span {
+        width: 100%;
+        height: 0;
+        background-color: $color-transparent;
+        #{$ltr-global} & {
+          transform: rotate(-90deg);
+        }
+
+        #{$rtl-global} & {
+          transform: rotate(90deg);
+        }
+
+        &:before, &:after {
+          top: 0;
+          width: 100%;
+        }
+
+        &:after {
+          #{$ltr-global} & {
+            transform: rotate(45deg);
+          }
+
+          #{$rtl-global} & {
+            transform: rotate(-45deg);
+          }
+        }
+
+        &:before {
+          #{$ltr-global} & {
+            transform: rotate(-45deg);
+          }
+
+          #{$rtl-global} & {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  span {
+    width: 70%;
+    height: $burgertoggle-line;
+    background-color: $burgertoggle-color;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: $burgertoggle-transition;
+
+    #{$ltr-global} & {
+      right: 0;
+    }
+
+    #{$rtl-global} & {
+      left: 0;
+    }
+
+    &:before, &:after {
+      content: "";
+      width: $burgertoggle-width;
+      height: $burgertoggle-line;
+      background-color: $burgertoggle-color;
+      border-radius: 20px;
+      position: absolute;
+      transition: $burgertoggle-transition;
+
+      #{$ltr-global} & {
+        right: 0;
+      }
+
+      #{$rtl-global} & {
+        left: 0;
+      }
+    }
+
+    &:after {
+      top: $burgertoggle-line-space;
+    }
+
+    &:before {
+      top: -$burgertoggle-line-space;
+    }
+  }
+}
+/******** END: Burger toggle ********/

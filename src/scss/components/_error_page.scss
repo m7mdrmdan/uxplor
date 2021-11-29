@@ -1,0 +1,29 @@
+// Imports
+@import "../imports/functions";
+
+/***** START: Error Page *****/
+.icon-special-error {
+  width: 280px;
+  height: 280px;
+  
+  @include media-breakpoint-up(md) {
+    // START: Tablet size
+    width: 330px;
+    height: 330px;
+    // END: Tablet size
+  }
+
+  @include media-breakpoint-up(lg) {
+    // START: Desktop size
+    width: 450px;
+    height: 450px;
+    // END: Desktop size
+  }
+  @include media-breakpoint-up(xl) {
+    // START: Large Desktop size
+    width: 530px;
+    height: 530px;
+    // END: Large Desktop size
+  }
+}
+/***** END: Error Page *****/

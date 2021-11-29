@@ -1,0 +1,92 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: List Links ********/
+.list {
+  &-links {
+    list-style: none;
+  }
+
+  &-item {
+    border-bottom: 1px dotted $color-monochrome-silver;
+
+    &:first-child {
+      border-top: 1px dotted $color-monochrome-silver;
+    }
+  }
+}
+
+.link {
+  &-item {
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    .search-list-link & {
+      padding: 1rem 0;
+    }
+    .flex-list-link & {
+      padding: 1rem;
+    }
+  }
+
+  &-text {
+    text-transform: capitalize;
+    display: flex;
+    .search-list-link & {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    &-icon {
+      display: none;
+      .flex-list-link & {
+        display: inline-block;
+        #{$ltr} & {
+          margin-right: 1rem;
+        }
+        #{$rtl} & {
+          margin-left: 1rem;
+        }
+      }
+      .search-list-pages & {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $color-monochrome-aluminium;
+        border-radius: 50%;
+        #{$ltr} & {
+          margin-right: 1rem;
+        }
+        #{$rtl} & {
+          margin-left: 1rem;
+        }
+      }
+    }
+    .result {
+      .search-result & {
+        color: $color-primary-red;
+      }
+    }
+  }
+
+  &-chevron {
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+    #{$rtl} & {
+      transform: rotate(-180deg);
+    }
+
+    & > * {
+      // width: 100%;
+      // height: 100%;
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+/******** START: List Links ********/

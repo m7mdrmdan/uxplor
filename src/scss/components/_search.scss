@@ -1,0 +1,54 @@
+// Imports
+@import "../imports/functions";
+@import "../utils/utils_font";
+
+/******** START: Search ********/
+.search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 50px);
+  padding-top: 9rem;
+  background: $color-monochrome-light-grey;
+
+  // position: absolute;
+  // overflow: scroll;
+
+  .h-90 {
+    height: 85%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    // START: Desktop size
+    position: absolute;
+    bottom: 0;
+    padding-top: 45px;
+    overflow: hidden;
+    // END: Desktop size
+  }
+
+  &-wrapper-group {
+    @include media-breakpoint-down(lg) {
+      // START: Below Desktop size
+      width: 100%;
+      background-color: $color-monochrome-light-grey;
+      padding: 60px 0 20px;
+      position: fixed;
+      top: 5px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      // END: Below Desktop size
+    }
+  }
+}
+
+// .col-result {
+//   @include media-breakpoint-up(lg) {
+//     // START: Desktop size
+//     height: 100%;
+//     // END: Desktop size
+//   }
+// }
+
+/******** END: Search ********/

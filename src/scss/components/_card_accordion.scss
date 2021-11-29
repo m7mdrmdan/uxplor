@@ -1,0 +1,193 @@
+// Imports
+@import "../imports/functions";
+@import "../components/checkbox_radio";
+
+/******** START: Card Accordion ********/
+#{$ng-deep} .card {
+  &-accordion {
+    background: $white;
+    color: $color-monochrome-dark-grey;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+
+    // START: Header
+    &-header {
+      margin-bottom: 1.5rem;
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        margin-bottom: 2rem;
+      } // END: Desktop size
+
+      .card-accordion-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.87rem;
+      }
+
+      .card-accordion-sub-title {
+        font-size: 1.25rem;
+        margin-bottom: 0;
+        opacity: 0.8;
+      }
+    }
+    // END: Header
+
+    // START: Body
+    &-body {
+      .btn-link {
+        width: 100%;
+        background: $white;
+        color: $color-primary-red;
+        margin: 0;
+        border-radius: 0;
+        font-size: 1.12rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.2rem 0;
+        border: 0;
+        box-shadow: none;
+
+        &:focus {
+          outline: 0;
+        }
+
+        &::after {
+          border-top: 2px solid #e60000;
+          border-right: 2px solid #e60000;
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          transform: rotate(135deg);
+          position: absolute;
+          content: "";
+          margin-top: -0.2rem;
+          right: 30%;
+          transition: all 0.25s linear;
+          @include media-breakpoint-up(md) {
+            right: 40%;
+          }
+
+          @include media-breakpoint-up(lg) {
+            // START: Desktop size
+            right: 42%;
+          } // END: Desktop size
+        }
+      }
+
+      .panel.panel-open .btn-link::after {
+        transform: rotateZ(-45deg);
+        margin-top: 0.3rem;
+      }
+
+      .panel.card.panel-default {
+        display: flex;
+        flex-direction: column;
+        .panel-collapse.collapse {
+          order: 1;
+        }
+
+        .panel-heading.card-header {
+          order: 2;
+        }
+      }
+
+      .panel-body {
+        padding: 2.18rem 0 3.12rem 0;
+        background: rgb(204, 204, 204);
+        background: linear-gradient($color-monochrome-light-grey 0%, $color-white 100%);
+        margin: 0;
+        border-radius: 0.5rem;
+      }
+    }
+    // END: Body
+
+    // START: Option
+    &-option {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+
+      &-title,
+      &-subtitle {
+        font-size: 1.25rem;
+        margin: 0.31rem;
+        opacity: 0.8;
+        #{$ltr} & {
+          margin-left: 1rem;
+        }
+
+        #{$rtl} & {
+          margin-right: 1rem;
+        }
+      }
+
+      // .custom-control {
+      //   position: initial;
+      // }
+
+      // .custom-control-input {
+      //   top: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   width: 55%;
+      //   height: 100%;
+      //   z-index: 1;
+      //   cursor: pointer;
+      //   @include media-breakpoint-up(md) {
+      //     width: 50%;
+      //   }
+
+      //   @include media-breakpoint-up(lg) {
+      //     width: 30%;
+      //   }
+      // }
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        margin-bottom: 0;
+      } // END: Desktop size
+    }
+    // END: Option
+
+    // START: Expaned
+    &-expanded {
+      .panel-heading.card-header {
+        display: none;
+      }
+
+      .collapse.panel-collapse {
+        display: block !important;
+      }
+
+      .panel-body {
+        background: $white;
+        border: none;
+        padding: 0;
+        padding-bottom: 1rem;
+      }
+    }
+    // END: Expaned
+  }
+}
+/******** END: Card Accordion ********/
+
+/******** START: Card Accordion Shimmer ********/
+.shimmer {
+  &-icon {
+    width: 1.87rem;
+    height: 1.87rem;
+    #{$ltr} & {
+      margin-right: 0.6rem;
+    }
+
+    #{$rtl} & {
+      margin-left: 0.6rem;
+    }
+  }
+}
+/******** END: Card Accordion Shimmer ********/

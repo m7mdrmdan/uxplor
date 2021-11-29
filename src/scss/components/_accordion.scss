@@ -1,0 +1,188 @@
+// Imports
+@import "../imports/functions";
+
+/******** START: Accordion ********/
+accordion-group,
+.accordion-item {
+  background-color: $color-white;
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+// Deep selector for angular access
+.accordion {
+  &-title {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0;
+    // text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    @include media-breakpoint-up(md) {
+      // START: Tablet size
+      padding: 0.75rem 0.8rem;
+    } // END: Tablet size
+
+    @include media-breakpoint-up(lg) {
+     // START: Desktop size
+     padding: 0.75rem 1rem;
+    } // END: Desktop size
+
+    &-sub {
+      display: none;
+    }
+
+    &-chevron {
+      color: $color-primary-red;
+      transition: all 0.25s linear;
+
+      .accordion-item .collapsed & {
+        transform: scaleY(1);
+      }
+      .accordion-item & {
+        transform: scaleY(-1);
+        filter: fliph;
+      }
+
+    }
+
+    sub {
+      top: 0;
+      bottom: auto;
+      font-size: 1rem;
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        top: 2px;
+        @include font-size(75%);
+      } // END: Tablet size
+    }
+  }
+
+  // Class options for accordion-group
+  &-multiple-title {
+    // .accordion-multiple-title
+    .accordion-title {
+      text-align: center;
+      flex-direction: column;
+
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        text-align: left;
+        flex-direction: unset;
+      } // END: Tablet size
+
+      &-heading {
+        margin-right: 2rem;
+      }
+
+      &-sub {
+        margin-top: 0.25rem;
+
+        @include media-breakpoint-up(md) {
+          // START: Tablet size
+          margin-top: 0;
+          margin-right: 2rem;
+        } // END: Tablet size
+      }
+
+      &-chevron {
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .accordion-title-sub {
+      display: inline-block;
+    }
+  }
+
+  &-border {
+    // .accordion-border
+    .accordion-title {
+      border-left: 3px solid $color-primary-red;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+  }
+
+  // Accordion for angular project
+  &-body{
+    padding: 1.25rem 0.5rem;
+    margin: 0 0.75rem;
+    border-top: 1px solid $color-monochrome-silver;
+
+    @include media-breakpoint-up(md) {
+      // START: Tablet size
+      padding: 1.5rem 0.8rem;
+      margin: 0 1.2rem;
+    } // END: Tablet size
+
+    @include media-breakpoint-up(lg) {
+      // START: Desktop size
+      padding: 1.75rem 1rem;
+      margin: 0 1.5rem;
+    } // END: Desktop size
+  }
+
+
+  .card {
+    &-header {
+      padding: 0.75rem 0.75rem;
+
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        padding: 0.75rem 1.2rem;
+      } // END: Tablet size
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        padding: 1rem 1.5rem;
+      } // END: Desktop size
+    }
+
+    &-body {
+      padding: 1.25rem 0.5rem;
+      margin: 0 0.75rem;
+      border-top: 1px solid $color-monochrome-silver;
+
+      @include media-breakpoint-up(md) {
+        // START: Tablet size
+        padding: 1.5rem 0.8rem;
+        margin: 0 1.2rem;
+      } // END: Tablet size
+
+      @include media-breakpoint-up(lg) {
+        // START: Desktop size
+        padding: 1.75rem 1rem;
+        margin: 0 1.5rem;
+      } // END: Desktop size
+    }
+  }
+
+  .panel-open {
+    .accordion-title-chevron {
+      transform: scaleY(-1);
+      filter: fliph;
+    }
+  }
+
+  .accordion-multiple-title {
+    &.panel-open {
+      .accordion-title-chevron {
+        transform: translateY(-50%) scaleY(-1);
+      }
+    }
+  }
+}
+/******** END: Accordion ********/
