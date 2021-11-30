@@ -1,0 +1,80 @@
+@import "../../../../scss/imports/functions";
+   
+   
+   .galary {
+        background-color: #FEF8FB;
+    }
+    
+    .heading {
+        text-align: center;
+        margin: auto;
+    }
+    
+    .heading span {
+        color: #DE1087
+    }
+    
+    .heading h2 {
+        font-family: Archivo;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 120%;
+        text-transform: capitalize;
+    }
+    
+    .heading p {
+        font-family: Archivo;
+        line-height: 160%;
+        text-align: center;
+        color: #777986;
+        text-align: center;
+        width: 570px;
+    }
+    
+    .headingsm h4,
+    .headingsm a {
+        font-family: Archivo;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    
+    .headingsm a {
+        color: #DE1087;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .headingsm h4 {
+        font-size: 20px;
+        line-height: 24px;
+        color: #101223;
+    }
+    
+    .col-sm {
+        background-color: white;
+    }
+    
+    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2) {
+        .heading {
+            display: none
+        }
+    }
+    
+    .galary img {
+        border-radius: 25px;
+    }
+    
+    .col-sm-8,
+    .col-sm-4 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    
+    // .col-sm-8 img,
+    // .col-sm-4 img {
+    //     width: 75%!important
+    // }
+    // .col-sm-8 .x img {
+    //     width: 40% !important;
+    // }
