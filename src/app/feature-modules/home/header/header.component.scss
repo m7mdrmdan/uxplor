@@ -1,49 +1,16 @@
-                    .headerr {
-                        background: linear-gradient(130.82deg, #DE1087 6.31%, #FA5A6B 100%);
-                        width: 100%;
-                        height: 110px;
-                    }
-                    
-                    .logo {
-                        width: 80px;
-                        height: 80px;
-                        border-radius: 14px;
-                        box-shadow: 1px 1px 3px gray;
-                        padding: 0px !important;
-                        margin: 0px !important;
-                    }
-                    
-                    * {
-                        font-family: Archivo;
-                    }
-                    
-                    .headerr h1 {
-                        font-weight: bold !important;
-                        font-size: 35px !important;
-                        line-height: 120%;
-                        text-transform: capitalize;
-                        color: #FFFFFF;
-                        margin: 1px 0px;
-                    }
-                    
-                    .headerr p {
-                        font-size: 15px !important;
-                        line-height: 120%;
-                        text-transform: capitalize;
-                        color: #FFFFFF;
-                        margin: 2px 0px;
-                    }
-                    
-                    .headerr button {
-                        padding: 13.5px 30px;
-                        width: 154px;
-                        height: 56px;
-                        background: #FFFFFF;
-                        border-radius: 12px;
-                    }
-                    
-                    @media only screen and (max-width: 576px) {
-                        .headerr {
-                            display: none !important
-                        }
-                    }
+// Imports
+@import '../../../../scss/imports/functions';
+
+/******** START: Header ********/
+.header {
+	background-color: $color-white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+
+	.brand-img {
+		width: 130px;
+	}
+}
+/******** END: Header ********/

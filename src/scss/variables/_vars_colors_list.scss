@@ -1,8 +1,21 @@
 $uxplor-colors : (
+  // Primary colors
+  primary-dark:                              $color-primary-dark,
+  primary-light:                             $color-primary-light,
+
+
+
+  // Secondary colors
+  black:                              $color-black,
+  gray-dark:                             $color-gray-dark,
+  gray-light:                             $color-gray-light,
+  white:                            $color-white,
+  transparent:                        $color-transparent,
+
+
   // Primary colours
   red:                              $color-primary-red,
   grey:                             $color-primary-grey,
-  white:                            $color-primary-white,
   light-red:                        $color-primary-light-red,
 
 
@@ -28,7 +41,6 @@ $uxplor-colors : (
 
 
   // Monochrome colours
-  black:                            $color-monochrome-black,
   dark-grey:                        $color-monochrome-dark-grey,
   anthracite:                       $color-monochrome-anthracite,
   mid-grey:                         $color-monochrome-mid-grey,
@@ -36,5 +48,4 @@ $uxplor-colors : (
   silver:                           $color-monochrome-silver,
   aluminium:                        $color-monochrome-aluminium,
   light-grey:                       $color-monochrome-light-grey,
-  transparent:                      $color-monochrome-transparent
 );

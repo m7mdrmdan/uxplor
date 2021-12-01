@@ -10,18 +10,20 @@
   white-space: nowrap;
   vertical-align: middle;
   line-height: 1;
-  border: 1px solid $color-transparent;
+  border: none;
   border-radius: $btn-radius;
   box-shadow: $btn-shadow;
   transition: all 0.15s ease-in-out;
 
   &:hover {
-    box-shadow: none;
+    // box-shadow: none;
     cursor: pointer;
   }
 
   &:focus {
-    border-color: $color-secondary-aqua-blue;
+    box-shadow: inherit;
+    border: none;
+    outline: none;
   }
 
   @include media-breakpoint-up(sm) {  // START: Mobile (Landscape) size

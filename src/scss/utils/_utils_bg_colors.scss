@@ -10,6 +10,13 @@
 
 
 .bg{
+  &-primary-gradient {
+    background: $color-primary-gradient;
+  }
+
+
+
+
   // Gradient direction Down to Top
   &-down{
     &-silver-white{

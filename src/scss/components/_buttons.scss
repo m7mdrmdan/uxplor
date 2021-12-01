@@ -9,29 +9,36 @@
   &-primary {
     color: $color-white;
     fill: $color-white;
-    background-color: $main-color;
-    border-color: $main-color;
+    background: $color-primary-gradient;
     
     &:hover {
-      // color: $color-white;
-      background-color: $color-digital-maroon;
-      border-color: $color-digital-maroon;
+      // // color: $color-white;
+      // background-color: $color-digital-maroon;
+      // border-color: $color-digital-maroon;
     }
-    &-dark {
-      @extend .btn-primary;
+    &-reverse {
+      background-color: $color-white;
+      .btn-txt {
+        background: $color-primary-gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 
   // .btn-secondary
   &-secondary {
-    color: $color-white;
-    background-color: $color-monochrome-anthracite;
-    border-color: $color-monochrome-anthracite;
+    background-color: rgba($color-primary-dark, 0.1);
+    .btn-txt {
+      background: $color-primary-gradient;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     
     &:hover {
       // color: $color-white;
-      background-color: $color-monochrome-dark-grey;
-      border-color: $color-monochrome-dark-grey;
+      // background-color: $color-monochrome-dark-grey;
+      // border-color: $color-monochrome-dark-grey;
     }
     &:focus {
       background-color: $color-black;
