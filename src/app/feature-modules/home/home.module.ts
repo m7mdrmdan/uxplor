@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GallaryComponent } from './gallary/gallary.component';
 import { BrandsComponent } from './brands/brands.component';
 import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback
     HeaderComponent,
     NavbarComponent,
     GallaryComponent,
-    BrandsComponent
+    BrandsComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,
