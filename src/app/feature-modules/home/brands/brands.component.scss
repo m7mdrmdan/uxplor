@@ -1,84 +1,140 @@
-.galary {
-    background-color: white;
-}
-
-.heading {
-    text-align: center;
-    margin: auto;
-}
-
-.heading span {
-    color: #DE1087
-}
-
-.heading h2 {
-    font-family: Archivo;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 120%;
-    text-transform: capitalize;
-}
-
-.heading p {
-    font-family: Archivo;
-    line-height: 160%;
-    text-align: center;
-    color: #777986;
-    text-align: center;
-    width: 570px;
-}
-
-.brand {
-    position: static;
-    width: 170px;
-    height: 170px;
-    background: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    box-sizing: border-box;
-    border-radius: 20px;
-    margin: 3px 5px;
-    position: relative;
-}
-
-.brand img {
-    width: 80px;
-    height: 80px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-}
-
-.brand .brandName {
-    font-family: Archivo;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 160%;
-    text-align: center;
-    color: #101223;
-}
-
-.headingsm h4,
-.headingsm a {
-    font-family: Archivo;
-    font-style: normal;
-    font-weight: bold;
-    text-transform: capitalize !important;
-}
-
-.headingsm a {
-    color: #DE1087;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-.headingsm h4 {
-    font-size: 20px;
-    line-height: 24px;
-    color: #101223;
-}
-
-@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2) {
-    .heading {
-        display: none
-    }
-}
+                            .brands {
+                                background-color: #fff !important;
+                            }
+                            
+                            .heading {
+                                text-align: center;
+                                margin: auto;
+                            }
+                            
+                            .heading span {
+                                color: #DE1087
+                            }
+                            
+                            .heading h2 {
+                                font-family: Archivo;
+                                font-weight: bold;
+                                font-size: 48px;
+                                line-height: 120%;
+                                text-transform: capitalize;
+                            }
+                            
+                            .heading p {
+                                font-family: Archivo;
+                                line-height: 160%;
+                                text-align: center;
+                                color: #777986;
+                                text-align: center;
+                                width: 570px;
+                            }
+                            
+                            .brand {
+                                position: static;
+                                width: 170px;
+                                height: 170px;
+                                background: #FFFFFF;
+                                border: 1px solid #DDDDDD;
+                                box-sizing: border-box;
+                                border-radius: 20px;
+                                margin: 3px 5px;
+                                position: relative;
+                            }
+                            
+                            .brand img {
+                                width: 80px;
+                                height: 80px;
+                                border: 1px solid #ccc;
+                                border-radius: 50%;
+                            }
+                            
+                            .brand .brandName {
+                                font-family: Archivo;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 16px;
+                                line-height: 160%;
+                                text-align: center;
+                                color: #101223;
+                            }
+                            
+                            .headingsm h4,
+                            .headingsm a {
+                                font-family: Archivo;
+                                font-style: normal;
+                                font-weight: bold;
+                                text-transform: capitalize !important;
+                            }
+                            
+                            .headingsm a {
+                                color: #DE1087;
+                                font-size: 16px;
+                                line-height: 24px;
+                            }
+                            
+                            .headingsm h4 {
+                                font-size: 20px;
+                                line-height: 24px;
+                                color: #101223;
+                            }
+                            
+                            // @media only screen and (max-width: 768px) {
+                            //     .brand {
+                            //         width: 100px;
+                            //         height: 200px;
+                            //     }
+                            // }
+                            @media only screen and (max-width: 768px) {
+                                .heading {
+                                    display: none;
+                                }
+                                .brand {
+                                    border-radius: none;
+                                    border: none;
+                                    width: 125px;
+                                    height: 130px;
+                                    // background-color: #DE1087;
+                                }
+                                .brand .brandName {
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                }
+                                .brand img {
+                                    border-radius: 0px;
+                                    border: none;
+                                    width: 84px;
+                                }
+                                .disapear_brand {
+                                    display: none;
+                                }
+                                // .container {
+                                //     padding-left: 0px !important;
+                                // }
+                            }
+                            
+                            @media only screen and (max-width: 576px) {
+                                .heading {
+                                    display: none;
+                                }
+                                .brand {
+                                    border-radius: none;
+                                    border: none;
+                                    width: 100px;
+                                    height: 130px;
+                                    // background-color: #DE1087;
+                                }
+                                .brand .brandName {
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                }
+                                .brand img {
+                                    border-radius: 0px;
+                                    border: none;
+                                    width: 100%;
+                                }
+                                .disapear_brand {
+                                    display: none;
+                                }
+                                // .container {
+                                //     padding-left: 0px !important;
+                                // }
+                            }

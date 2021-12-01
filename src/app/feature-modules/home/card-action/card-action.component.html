@@ -10,20 +10,17 @@
                     <!--------- START: Card action --------->
                     <div class="card-action radius shadow-sm" [ngClass]="[cardStyle, cardSize]">
                         <a href="#" (click)="onClick($event)" class="w-100">
-                            <div class="card-action-body">
+                            <div class="card-action-body text-center " *ngFor=" let slide of slides; let index= index ">
                                 <div>
-                                    <h4 class="font-bold h5-2x m-0">title here</h4>
-                                    <p class="m-0">description here</p>
+                                    <h4 class="m-0">{{slide.heading}}
+                                    </h4>
+                                    <p class="m-0">{{slide.paragaraph}}</p>
                                 </div>
                             </div>
-                            <div class="card-action-img">
+                            <div class="card-action-img" *ngFor=" let slide of slides; let index= index ">
                                 <picture>
-                                    <!-- Small screen image -->
-                                    <!-- <source  media="(max-width: 575px)" srcset=""> -->
-                                    <!-- Medium screen image -->
-                                    <!-- <source  media="(max-width: 991px)" srcset=""> -->
-                                    <!-- Large and default screen image -->
-                                    <img src="https://web.vodafone.com.eg/documents/31803/0/Find US.png/ff883329-95b8-6406-dffd-9d0bb3bf04f4" alt="action-image">
+
+                                    <img [src]="slide.source" lt="action-image ">
                                 </picture>
                             </div>
                         </a>
@@ -31,17 +28,17 @@
                     <!--------- END: Card action --------->
 
                     <!--------- START: Card action shimmer --------->
-                    <div class="card-action radius shadow-sm d-none" [ngClass]="[cardStyle, cardSize]">
-                        <a href="" class="w-100">
-                            <div class="card-action-body">
+                    <div class="card-action radius shadow-sm d-none " [ngClass]="[cardStyle, cardSize] ">
+                        <a href=" " class="w-100 ">
+                            <div class="card-action-body ">
                                 <div></div>
                                 <div>
-                                    <div class="shimmer-bg shimmer-title w-50"></div>
-                                    <div class="shimmer-bg shimmer-content m-0 w-75"></div>
+                                    <div class="shimmer-bg shimmer-title w-50 "></div>
+                                    <div class="shimmer-bg shimmer-content m-0 w-75 "></div>
                                 </div>
                             </div>
-                            <div class="card-action-img">
-                                <div class="shimmer-bsg h-100"></div>
+                            <div class="card-action-img ">
+                                <div class="shimmer-bsg h-100 "></div>
                             </div>
                         </a>
                     </div>

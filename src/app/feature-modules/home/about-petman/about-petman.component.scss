@@ -55,3 +55,24 @@
               border: 2px solid #F3F4F8;
               box-sizing: border-box;
           }
+          
+          //   .d-sm-flex .order-1 {
+          //       position: absolute;
+          //       top: -30%;
+          //       right: 0;
+          //   }
+          @media only screen and (max-width: 768px) {
+              .btns {
+                  position: absolute;
+                  top: -30%;
+                  right: 0;
+              }
+          }
+          
+          //   @media only screen and (max-width: 720px) {
+          //       .btns {
+          //           position: absolute;
+          //           top: -30%;
+          //           right: 0;
+          //       }
+          //   }

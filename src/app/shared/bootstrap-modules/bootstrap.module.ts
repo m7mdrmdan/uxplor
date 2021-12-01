@@ -7,6 +7,8 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
 import {PopoverModule} from 'ngx-bootstrap/popover';
+import { RatingModule } from 'ngx-bootstrap/rating';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import {PopoverModule} from 'ngx-bootstrap/popover';
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
+    RatingModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   exports: [
     CollapseModule,
@@ -28,7 +32,7 @@ import {PopoverModule} from 'ngx-bootstrap/popover';
     BsDropdownModule,
     ModalModule,
     AccordionModule,
-    PopoverModule
+    PopoverModule,RatingModule,CarouselModule
   ]
 })
 export class BootstrapModule { }
