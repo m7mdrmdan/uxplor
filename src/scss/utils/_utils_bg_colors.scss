@@ -10,8 +10,13 @@
 
 
 .bg{
-  &-primary-gradient {
-    background: $color-primary-gradient;
+  &-primary{
+    &-gradient {
+      background: $color-primary-gradient;
+    }
+    &-transparent {
+      background-color: #FEF8FB;
+    }
   }
 
 

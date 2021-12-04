@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-customer-feedback',
   templateUrl: './customer-feedback.component.html',
-  styleUrls: ['./customer-feedback.component.scss']
+  styleUrls: ['./customer-feedback.component.scss', './../../../../scss/components/_carousel.scss']
 })
 export class CustomerFeedbackComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class CustomerFeedbackComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 700,
     navText: ['', ''],
     responsive: {
