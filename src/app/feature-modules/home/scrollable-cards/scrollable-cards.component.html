@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-6 text-center">
+			<div class="mb-4">
+				<h2 class="font-bold text-capitalize">Trending 
+					<span class="color-primary-gradient">products</span>
+				</h2>
+				<p class="color-gray-light mb-0">Mauris neque sed quisque urna et duis enim. Commodo augue senectus ac quis in
+					ac adipiscing non. Lectus
+					dignissim eu quis sagittis neque, vitae eleifend. Diam.</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12 mb-4 mb-md-0">
+			<div class="horizontal-scroll scroll-shadow-dark">
+				<div class="row align-items-start table-md">
+					<div class="col-3 table-cell-md" *ngFor="let item of items">
+	
+						<!--------- START: Card action --------->
+						<div class="product-card radius shadow overflow-hidden">
+              <img [src]="item.img" class="product-card-img" alt="action-image">
+
+              <div class="product-card-text p-3">
+                <h5 class="font-bold h5-2x m-0">{{item.title}}</h5>
+                <p class="mt-2 mb-0">
+                  <strong class="m-end-1">{{item.price}}</strong>
+                  <del class="font-light">{{item.oldPrice}}</del>
+                </p>
+              </div>
+						</div>
+						<!--------- END: Card action --------->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

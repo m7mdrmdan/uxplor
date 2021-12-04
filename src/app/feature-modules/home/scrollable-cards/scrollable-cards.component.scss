@@ -1,0 +1,54 @@
+// Imports
+@import '../../../../scss/imports/functions';
+@import '../../../../scss/utils/utils_colors';
+
+/******** START: Product Card ********/
+.product-card {
+  position: relative;
+  transform: translateY(0);
+  transition: all 0.25s ease;
+  
+  &-img {
+    width: 100%;
+    transform: scale(1.1);
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    color: $color-white;
+    background: linear-gradient(0deg, rgba($color-black, 1) 0%, rgba($color-black, 0) 97%);;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $color-primary-gradient;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1.25rem);
+
+    .product-card-text {
+      &::after {
+        opacity: 0.75;
+      }
+    }
+  }
+}
+/******** END: Product Card ********/
