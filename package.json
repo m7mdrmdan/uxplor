@@ -31,6 +31,7 @@
     "ngx-bootstrap": "6.2.0",
     "ngx-cacheable": "1.2.5",
     "ngx-clipboard": "14.0.1",
+    "ngx-owl-carousel-o": "^7.0.1",
     "ngx-slick-carousel": "^0.5.1",
     "rxjs": "6.6.3",
     "rxjs-compat": "6.6.3",

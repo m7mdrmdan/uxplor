@@ -1,206 +1,42 @@
-.wrapper {
-    h2 {
-        text-align: center;
-    }
-    p:first-of-type {
-        text-align: center;
-    }
+// Imports
+@import '../../../../scss/imports/functions';
+@import '../../../../scss/utils/utils_colors';
+
+/******** START: Testimonial ********/
+.testimonial-card {
+	border-radius: 25px;
+	margin: 2rem 0;
+	padding: 2rem 0;
+	border: 1px solid #ddd;
+	min-height: 340px;
+
+	
+	
+	.fa-quote-right {
+		@extend .color-primary-gradient;
+    font-size: 2rem;
+		
+	}
+	
+	.card-text {
+		padding: 0 2rem;
+	}
+	
+	&:hover {
+		color: $color-white;
+		background: $color-primary-gradient;
+		box-shadow: 0px 36px 24px -24px rgba(222, 16, 135, 0.3);
+		border-color: transparent;
+
+		.fa-quote-right {
+			background: $color-white;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
 }
 
-.Customer {
-    background-color: #fff;
+:host ::ng-deep rating span {
+	// color: red;	
 }
-
-.wrapper {
-    background-color: #fff;
-}
-
-.custom-color {
-    color: red;
-}
-
-.carousel-wrapper {
-    padding: 20px;
-}
-
- :host ::ng-deep .carousel-inner {
-    justify-content: space-between;
-}
-
- :host ::ng-deep .carousel-control {
-    display: none;
-}
-
- :host ::ng-deep .carousel-indicators {
-    bottom: -50px;
-    .active {
-        background-color: red;
-    }
-}
-
- :host ::ng-deep .carousel-indicators li {
-    background-color: pink;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-
- :host ::ng-deep div.item {
-    box-shadow: 0px 0px 5px rgba(64, 80, 74, 0.22);
-    width: 370px;
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
-    padding: 35px 25px;
-    border: 1px solid gray;
-    height: 363px;
-}
-
- :host ::ng-deep rating span {
-    color: red;
-}
-
- :host ::ng-deep slide.item.active:nth-of-type(2) div {
-    background: linear-gradient(130.82deg, #DE1087 6.31%, #FA5A6B 100%);
-    box-shadow: 0px 36px 24px -24px rgba(222, 16, 135, 0.3);
-    border-radius: 20px;
-    color: beige;
-    i {
-        color: #fff;
-    }
-    rating span {
-        color: #fff;
-    }
-}
-
-h6,
-.opinion {
-    //font-family: Archivo;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 160%;
-    /* identical to box height, or 26px */
-    /* Grey/700 */
-    color: #404252;
-}
-
-
-/* identical to box height, or 26px */
-
-
-/* Grey/700 */
-
-.fa-quote-right {
-    color: #DE1087;
-    font-size: 1.8rem;
-}
-
-.heading {
-    text-align: center;
-    margin: auto;
-}
-
-.heading span {
-    color: #DE1087
-}
-
-.heading h2 {
-    //font-family: Archivo;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 120%;
-    text-transform: capitalize;
-}
-
-.heading p {
-    //font-family: Archivo;
-    line-height: 160%;
-    text-align: center;
-    color: #777986;
-    text-align: center;
-    width: 570px;
-}
-
-.headingsm h4,
-.headingsm a {
-    //font-family: Archivo;
-    font-style: normal;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-.headingsm a {
-    color: #DE1087;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-.headingsm h4 {
-    //font-family: Archivo;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height, or 120% */
-    /* Grey/900 */
-    color: #101223;
-}
-
-@media only screen and (max-width: 576px) {
-    .heading {
-        display: none !important;
-    }
-    .Customer {
-        padding: 0px !important;
-        margin: 0px !important;
-    }
-     :host ::ng-deep div.item,
-     :host ::ng-deep slide.item.active:nth-of-type(2) div {
-        width: 309px;
-        height: 276px;
-        background: #F3F4F8;
-        box-shadow: 0px 0px 0px 0px gray;
-        border: none;
-        padding: 19px 24px;
-        border-radius: 20px;
-    }
-     :host ::ng-deep div.item p,
-     :host ::ng-deep slide.item.active:nth-of-type(2) div p {
-        //font-family: Archivo;
-        font-size: 16px;
-        line-height: 20px;
-        color: #101223;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .heading {
-        display: none !important;
-    }
-    .Customer {
-        padding: 0px !important;
-        margin: 0px !important;
-    }
-     :host ::ng-deep div.item,
-     :host ::ng-deep slide.item.active:nth-of-type(2) div {
-        width: 309px;
-        height: 276px;
-        background: #F3F4F8;
-        box-shadow: 0px 0px 0px 0px gray;
-        border: none;
-        padding: 24px 24px;
-        border-radius: 20px;
-    }
-     :host ::ng-deep div.item p,
-     :host ::ng-deep slide.item.active:nth-of-type(2) div p {
-        //font-family: Archivo;
-        font-size: 16px;
-        line-height: 20px;
-        color: #101223;
-    }
-}
+/******** END: Testimonial ********/

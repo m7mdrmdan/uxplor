@@ -10,6 +10,7 @@ import { SpinnerService } from "../core/services/spinner.service";
 import { TimeFormat } from "./pipes/time-format";
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     TranslateModule,
     BootstrapModule,
     LazyLoadImageModule,
+    CarouselModule,
   ],
   providers: [SpinnerService],
   declarations: [
@@ -28,6 +30,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     SafeUrlPipe,
   ],
   exports: [
+    CarouselModule,
     UnitValueConverterPipe,
     UnitConverterPipe,
     CustomDatePipe,
