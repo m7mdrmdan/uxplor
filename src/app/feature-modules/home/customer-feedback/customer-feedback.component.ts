@@ -17,6 +17,10 @@ export class CustomerFeedbackComponent implements OnInit {
     dots: true,
     navSpeed: 700,
     navText: ['', ''],
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplaySpeed: 2000,
+    autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1
