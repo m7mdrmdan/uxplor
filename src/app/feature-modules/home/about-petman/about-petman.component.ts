@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPetmanComponent implements OnInit {
 
+
+  customOptions: any = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 700,
+    navText: ['', ''],
+    items: 1,
+    nav: true
+  }
+
+
   constructor() { }
 
   ngOnInit(): void {

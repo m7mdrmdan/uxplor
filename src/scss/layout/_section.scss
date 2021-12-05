@@ -65,20 +65,41 @@
   
   // section-title & // section-subtitle
   &-title {
-    margin-bottom: 2.5rem;
+    // margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    font-size: 2rem;
+    text-align: left;
+    
+    #{$ltr} & {
+      text-align: left;
+    }
+    
+    #{$rtl} & {
+      text-align: right;
+    }
+    
     & > * {
+      color: $color-black;
       margin-bottom: 0;
+      -webkit-text-fill-color: currentColor;
+      
+      @include media-breakpoint-up(lg) {
+        background: $color-primary-gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
     
     @include media-breakpoint-up(md) {
       // START: Tablet size
-      margin-bottom: 3rem;
+      // margin-bottom: 3rem;
       // END: Tablet size
     }
     
     @include media-breakpoint-up(lg) {
       // START: Desktop size
-      margin-bottom: 3.5rem;
+      font-size: 3rem;
+      // margin-bottom: 3.5rem;
       // END: Desktop size
     }
 

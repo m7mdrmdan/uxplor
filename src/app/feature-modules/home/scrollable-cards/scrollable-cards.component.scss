@@ -4,9 +4,16 @@
 
 /******** START: Product Card ********/
 .product-card {
+  width: 170px;
+  height: 220px;
   position: relative;
   transform: translateY(0);
   transition: all 0.25s ease;
+  
+  @include media-breakpoint-up(md) {
+    width: auto;
+    height: auto;
+  }
   
   &-img {
     width: 100%;
