@@ -1,223 +1,49 @@
-        // .headerr {
-        //     background: white;
-        //     width: 100%;
-        //     height: 110px;
-        // }
-        // .logo {
-        //     width: 80px;
-        //     height: 80px;
-        //     border-radius: 14px;
-        //     box-shadow: 1px 1px 3px gray;
-        //     padding: 0px !important;
-        //     margin: 0px !important;
-        // }
-        // * {
-        //     font-family: Archivo;
-        // }
-        // .headerr h1 {
-        //     font-weight: bold !important;
-        //     font-size: 35px !important;
-        //     line-height: 120%;
-        //     text-transform: capitalize;
-        //     color: #FFFFFF;
-        //     margin: 1px 0px;
-        // }
-        // .headerr p {
-        //     font-size: 15px !important;
-        //     line-height: 120%;
-        //     text-transform: capitalize;
-        //     color: #FFFFFF;
-        //     margin: 2px 0px;
-        // }
-        // .headerr button {
-        //     padding: 13.5px 30px;
-        //     width: 154px;
-        //     height: 56px;
-        //     background: #FFFFFF;
-        //     border-radius: 12px;
-        // }
-        // button {
-        //     background: #FFFFFF;
-        //     border-radius: 45px;
-        //     width: 10px;
-        //     height: 36px;
-        // }
-        // button i {
-        //     width: 3.36px !important;
-        //     height: 6.72px !important;
-        //     color: red !important;
-        //     border: 1.25px solid #404252 !important;
-        //     // transform: matrix(-1, 0, 0, 1, 0, 0);
-        // }
-        // span {
-        //     font-family: Archivo;
-        //     font-style: normal !important;
-        //     font-weight: bold !important;
-        //     font-size: 32px !important;
-        //     line-height: 120% !important;
-        // }
-        // .pets {
-        //     font-family: Archivo;
-        //     font-style: normal;
-        //     font-weight: normal;
-        //     font-weight: bold !important;
-        //     font-size: 32px !important;
-        //     line-height: 120% !important;
-        //     line-height: 160% !important;
-        //     background-color: #FEF8FB !important;
-        //     border: 1px transparent !important;
-        // }
-        $color-maincolor: #404252 !important;
-        $color-secondarycolor: #DE1087 !important;
-        .aboutInfo span,
-        .aboutInfo .pets {
-            color: $color-secondarycolor;
-        }
-        
-        .aboutInfo p {
-            font-family: Archivo !important;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px !important;
-            line-height: 160% !important;
-            color: $color-maincolor;
-        }
-        
-        .aboutLogoImage {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            left: 32px;
-            bottom: 55px;
-            padding: 4rem;
-            background: url(/assets/images/logo.png);
-            background-size: cover;
-            border-radius: 50%;
-            /* Grey/100 */
-            border: 2px solid #F3F4F8;
-            box-sizing: border-box;
-        }
-        
-        .petman p {
-            font-family: GT Flexa ALL NEU 7;
-            // font-style: normal;
-            font-weight: 800;
-            font-size: 18px;
-            line-height: 24px;
-            color: #101223;
-        }
-        
-        .petman span {
-            background: linear-gradient(130.82deg, #DE1087 6.31%, #FA5A6B 100%);
-            border-radius: 50% 50%;
-            // margin-bottom: -4px;
-            width: 20px;
-            height: 20px;
-        }
-        
-        .fa-check {
-            color: white!important;
-            font-size: 15px;
-            border-radius: 50%;
-            margin-left: 3px;
-            margin-bottom: 5px;
-        }
-        
-        .arrow {
-            background-color: white !important;
-            border-radius: 50%;
-            text-align: center;
-            width: 36px;
-            height: 36px;
-        }
-        
-        .arrow span {
-            font-size: 17px;
-            border-radius: 50%;
-            padding: 0px;
-            text-align: center;
-            margin-top: 3px;
-        }
-        
-        .vector {
-            width: 30px;
-            height: 30px;
-            // bottom: 0%;
-            margin: 43px;
-            text-align: center;
-            /* Primary/Primary */
-            background: linear-gradient(130.82deg, #DE1087 6.31%, #FA5A6B 100%);
-        }
-        
-        .navbar-nav {
-            flex-direction: row!important;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .navbar {
-            background-color: #FFFFFF!important;
-            box-shadow: 0px 8px 12px rgba(222, 16, 135, 0.06)!important;
-            border-radius: 16px !important;
-            height: 5rem!important;
-            flex-wrap: nowrap !important; // height: 60px!important;
-        }
-        
-        .explore {
-            // bottom: 0%;
-            margin: 40px;
-        }
-        
-        .btn {
-            width: 161px;
-            height: 48px;
-            text-align: center;
-            background: rgba(251, 218, 235, 0.3);
-            border: 1px solid #FFFFFF;
-            box-sizing: border-box;
-            border-radius: 12px;
-        }
-        
-        .btn1 {
-            background: rgba(251, 218, 235, 0.3);
-            /* Grey/White */
-            border: 1px solid #FFFFFF;
-            box-sizing: border-box;
-            color: #DE1087
-        }
-        
-        .btn2 {
-            background: linear-gradient(130.82deg, #DE1087 6.31%, #FA5A6B 100%)!important;
-            /* Grey/White */
-            color: #FFFFFF;
-        }
-        
-        .btn1,
-        .btn2 {
-            padding: 11px 24px;
-            width: 161px;
-            height: 48px;
-            border-radius: 12px !important;
-            font-family: Archivo;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 160%;
-            text-align: center;
-        }
-        
-        .arabic {
-            color: #DE1087;
-            font-family: GE SS Two;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 20px;
-            /* identical to box height, or 143% */
-            text-align: center;
-        }
-        
-        @media only screen and (max-width: 576px) {
-            .largescreen_nav {
-                display: none !important
-            }
-        }
+.headerr {
+	background: linear-gradient(130.82deg, #DE1087 6.31%, #FA5A6B 100%);
+	width: 100%;
+	height: 110px;
+}
+
+.logo {
+	width: 80px;
+	height: 80px;
+	border-radius: 14px;
+	box-shadow: 1px 1px 3px gray;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+* {
+	//font-family: Archivo;
+}
+
+.headerr h1 {
+	font-weight: bold !important;
+	font-size: 35px !important;
+	line-height: 120%;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	margin: 1px 0px;
+}
+
+.headerr p {
+	font-size: 15px !important;
+	line-height: 120%;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	margin: 2px 0px;
+}
+
+.headerr button {
+	padding: 13.5px 30px;
+	width: 154px;
+	height: 56px;
+	background: #FFFFFF;
+	border-radius: 12px;
+}
+
+@media only screen and (max-width: 576px) {
+	.headerr {
+			display: none !important
+	}
+}

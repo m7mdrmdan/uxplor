@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-6 text-center">
+			<div class="mb-3 mb-lg-4">
+				<div class="d-flex justify-content-between align-items-center flex-row flex-lg-columns">
+					<h2 class="section-title color-black font-bold mb-0">what
+						<span class="">customers say</span>
+					</h2>
+				</div>
+				<!-- <p class="color-gray-light mb-0 d-none d-lg-block">Mauris neque sed quisque urna et duis enim. Commodo augue senectus ac quis in ac adipiscing non. Lectus dignissim eu quis sagittis neque, vitae eleifend. Diam.</p> -->
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<owl-carousel-o class="carousel-h-100 mb-3 carousel-brand-reviews" [options]="customOptions">
+				<ng-container *ngFor="let slide of reviews">
+					<ng-template carouselSlide>
+						<div class="testimonial-card">
+							<div class="card-text">
+								<i class="fa fa-quote-right mb-3"></i>
+								<p class="mb-0">{{slide.comment}}</p>
+							</div>
+
+							<div class="card-text pt-4 card-border-top">
+								<h6 class="font-bold mb-2 text-capitalize">{{slide.name}}</h6>
+								<app-rating [rate]="ratingValue"></app-rating>
+								<!-- <rating [(ngModel)]="ratingValue" [max]="6" class="colo-primary-gradient m-end-2" [readonly]="true"></rating> -->
+								<!-- <span class="m-start-2">{{ratingValue}}</span> -->
+							</div>
+						</div>
+					</ng-template>
+				</ng-container>
+			</owl-carousel-o>
+		</div>
+	</div>
+</div>

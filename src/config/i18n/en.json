@@ -1,3 +1,13 @@
 {
-  
+    "language":"عربي",
+    "businessProfile":{
+        "title":"",
+        "save":"Save",
+        "about":"About",
+        "reviewsTitle":"What Customers Say",
+        "productsTitle":"Trending Products",
+        "ourGallery":"Our Gallery",
+        "relatedBrands":"Related Brands",
+        "visitStore":"Visit Store"
+    }  
 }

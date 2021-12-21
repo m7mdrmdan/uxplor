@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Languages } from './shared/constants/defines';
 import { LocalizationService } from './core/services/storage/localization.service';
 import { NavigationStart, Router } from '@angular/router';
@@ -11,9 +11,11 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   public direction: string;
   translateSubscription: Subscription;
+
+  // isAppLoaded: boolean;
 
   constructor(
     private locale: LocalizationService,
@@ -29,9 +31,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.locale.setDefaultLocale(Languages.defaultAr);
+    // this.isAppLoaded = false;
+    this.locale.setDefaultLocale(Languages.defaultEn);
     // this.direction = this.child.direction;
     this.onloading();
+  }
+
+  ngAfterViewInit(): void {
+  //   this.isAppLoaded = true;
   }
 
   hideNav(event) {
@@ -42,8 +49,7 @@ export class AppComponent implements OnInit {
     this.translateSubscription = this.translate.onLangChange.subscribe(
       (event) => {
         const lang = event.lang;
-        this.direction =
-          lang === Languages.defaultAr || lang === Languages.en ? 'rtl' : 'ltr';
+        this.direction = lang === Languages.ar ? 'rtl' : 'ltr';
       }
     );
   }

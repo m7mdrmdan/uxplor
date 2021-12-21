@@ -1,3 +1,41 @@
+// Primary colors
+$color-primary-dark: #de1087  ;
+$color-primary-light: #fa5a6b;
+$color-primary-gradient: linear-gradient(150deg, rgba($color-primary-dark, 1) 0%, rgba($color-primary-light, 1) 97%);
+$color-primary-gradient-90: linear-gradient(150deg, rgba($color-primary-dark, 0.9) 0%, rgba($color-primary-light, 0.9) 97%);
+$color-primary-transparent: #fef8fb;
+
+// Secondary colors
+$color-gray-900: #101223;
+$color-gray-700: #404252;
+$color-gray-500: #777986;
+$color-gray-300: #b3b5bd;
+$color-gray-200: #dddddd;
+$color-gray-100: #f3f4f8;
+
+// Gradient colors
+$color-gradient-contrast: linear-gradient(150deg, rgba(251, 218, 235, 1) 0%, rgba(255, 180, 186, 1) 97%);
+
+// Transparent colors
+$color-tansparent: #fbdaeb;
+$color-transparent-30: rgba($color-tansparent, 0.3);
+$color-transparent-20: rgba($color-tansparent, 0.2);
+
+// Error colors
+$color-error: #ff4343;
+
+// Main colors
+$color-black: #000000;
+$color-white: #ffffff;
+$color-transparent: transparent;
+
+
+
+
+
+
+
+
 // Primary colours
 $color-primary-red: #e60000;
 $color-primary-grey: #4a4d4e;

@@ -1,0 +1,23 @@
+// Imports
+@import '../../../../scss/imports/functions';
+
+/******** START: Brand Info ********/
+.my-brand-logo {
+	border: 5px solid rgba($color-white, 0.5);
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	left: 0;
+	bottom: 0;
+	transform: translate(20%, 50%);
+	
+	@include media-breakpoint-up(lg) {
+		width: 120px;
+		height: 120px;
+	}
+
+	img {
+		transform: scale(1.1);
+	}
+}
+/******** END: Brand Info ********/

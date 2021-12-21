@@ -13,7 +13,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { translateConfigLoaderFactory } from './core/services/common.loader';
 import { CustomMissingTranslationHandler } from './core/services/missing-translation-handler.service';
 import { SharedModule } from './shared/shared.module';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+
 export function createTranslateLoader(httpBackend: HttpBackend) {
   return new CustomTranslateLoader(new HttpClient(httpBackend), 'config/i18n/', '.json');
 }
@@ -25,7 +27,6 @@ export function createTranslateLoader(httpBackend: HttpBackend) {
   ],
   imports: [
     BrowserModule,
-    SlickCarouselModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -44,6 +45,7 @@ export function createTranslateLoader(httpBackend: HttpBackend) {
     })
   ],
   providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     {
       provide: APP_INITIALIZER,
       useFactory: translateConfigLoaderFactory,

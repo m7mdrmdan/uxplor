@@ -1,0 +1,41 @@
+// Imports
+@import '../../../../scss/imports/functions';
+
+/******** START: Tabs Bar ********/
+.tabs-bar {
+  width: 100%;
+  background-color: lighten($color-tansparent, 7%);
+  padding: 0.75rem 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  color: $color-gray-500;
+  
+  .item {
+    text-transform: capitalize;
+    
+    &-icon {
+      font-size: 1.5rem;
+    }
+    
+    &-name {
+      margin-top: 0.25rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      
+      .item-icon {
+        @include color-gradient($color-primary-gradient);
+      }
+
+      .item-name {
+        font-weight: bold;
+        @include color-gradient($color-primary-gradient);
+      }
+    }
+  }
+}
+/******** END: Tabs Bar ********/

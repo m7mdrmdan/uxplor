@@ -1,52 +1,49 @@
-<!-- <div class="wrapper bg-white">
-    <h2>What <span class="custom-color">Customer Says</span></h2>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam vel officiis omnis iure quod nostrum dolorem a aliquid? Adipisci quo commodi ullam labore
-    </p>
-    <div class="carousel-wrapper bg-white container">
-        <carousel class="bg-white justify-content-between " [itemsPerSlide]=" itemsPerSlide " [singleSlideOffset]="false " [interval]="0 " [indicatorsByChunk]="true " [noWrap]="true ">
-            <slide *ngFor=" let slide of slides; let index=i " class="bg-white ">
-                <i class="fas fa-feedback px-2 text-muted custom-color "></i>
-                <p style="text-align: left; " class="opinion ">{{slide.paragaraph}}</p>
-                <hr>
-                <h6>{{slide.name}}</h6>
-                <rating [(ngModel)]="slide.rating " [max]="5 " [readonly]="true "></rating>
-                <span>{{slide.rating}}</span>
-            </slide>
-        </carousel>
-    </div>
-</div> -->
-<section class="Customer  py-5 my-5">
-    <div class="container ">
-        <div class="heading  d-sm-none d-md-flex  d-lg-flex d-xl-flex center  flex-column align-items-center  ">
-            <h2>What
-                <span class="ourheading">Customer Says</span>
-            </h2>
-            Mauris neque sed quisque urna et duis enim. Commodo augue senectus ac quis in ac adipiscing non. Lectus dignissim eu quis sagittis neque, vitae eleifend. Diam. </div>
-        <div class="headingsm  py-4 d-sm-flex d-md-none d-lg-none d-xl-none center d-flex  justify-content-between  ">
-            <h4>What customers say</h4>
-        </div>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-6 text-center">
+			<div class="mb-4">
+				<div class="d-flex justify-content-between align-items-center flex-row flex-lg-column mb-2">
+					<h2 class="section-title color-black font-bold mb-0">what
+						<span class="">prcustomer says</span>
+					</h2>
+				</div>
+				<p class="color-gray-light mb-0 d-none d-lg-block">Mauris neque sed quisque urna et duis enim. Commodo augue senectus ac quis in
+					ac adipiscing non. Lectus
+					dignissim eu quis sagittis neque, vitae eleifend. Diam.</p>
+			</div>
+		</div>
+	</div>
 
-    </div>
-    <div class="row">
-        <div class="wrapper col-md-12  d-md-block  ">
+	<div class="row">
+		<div class="col-12">
+			<owl-carousel-o [options]="customOptions">
 
+				<ng-container *ngFor="let slide of slides">
+					<ng-template carouselSlide>
+						<div class="testimonial-card">
+							<div class="card-text">
+								<i class="fa fa-quote-right mb-3"></i>
+								<p>{{slide.paragaraph}}</p>
+							</div>
+							<hr>
+							<div class="card-text">
+								<h6 class="font-bold">{{slide.name}}</h6>
+								<rating [(ngModel)]="slide.rating" [max]="6" class="colo-primary-gradient m-end-2" [readonly]="true"></rating>
+								<span>{{slide.rating}}</span>
+							</div>
+						</div>
+					</ng-template>
+				</ng-container>
+			</owl-carousel-o>
+		
+		</div>
 
-            <div class="carousel-wrapper   d-flex justify-content-between ">
-
-                <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="0" [indicatorsByChunk]="true" [noWrap]="true">
-                    <slide *ngFor="let slide of slides; let index = index" class="mx-3 bg-seconday ">
-                        <i class="fa fa-quote-right px-2"></i>
-                        <p style="text-align: left;" class="opinion">{{slide.paragaraph}}</p>
-                        <hr>
-                        <h6>{{slide.name}}</h6>
-                        <rating [(ngModel)]="slide.rating" [max]="5" [readonly]="true"></rating>
-                        <span>{{slide.rating}}</span>
-                    </slide>
-                </carousel>
-            </div>
-        </div>
-    </div>
-    <!-- </div>
-    </div> -->
-</section>
+		<div class="col-12">
+			<div class="wrapper d-md-block  ">
+				<div class="carousel-wrapper d-flex justify-content-between ">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

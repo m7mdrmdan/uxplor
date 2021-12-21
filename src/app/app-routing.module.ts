@@ -2,11 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes =[
-  {
-    path: '',
-    redirectTo: 'home', // TODO: should be replaced to the redirections to home when add a new module
-    pathMatch: 'full',
-  },
+  { path: '', redirectTo: 'business-profile', pathMatch: 'full'},
   {
     path: 'home',
     loadChildren: () =>
@@ -14,6 +10,15 @@ const routes: Routes =[
         (m) => m.HomeModule
       ),
   },
+  {
+    path: 'business-profile',
+    loadChildren: () =>
+      import('./feature-modules/business-profile/business-profile.module').then(
+        (m) => m.BusinessProfileModule
+      ),
+  },
+  { path: '**', redirectTo: 'business-profile'},
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

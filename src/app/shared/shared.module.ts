@@ -10,30 +10,48 @@ import { SpinnerService } from "../core/services/spinner.service";
 import { TimeFormat } from "./pipes/time-format";
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { TagsComponent } from './components/tags/tags.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { TabsBarComponent } from './components/tabs-bar/tabs-bar.component';
+
+
+const sharedModules = [
+  TranslateModule,
+  LazyLoadImageModule,
+  CarouselModule
+];
+
+const sharedComponents = [
+  TabsBarComponent,
+  TagsComponent,
+  RatingComponent
+];
+
+const sharedPipes = [
+  UnitValueConverterPipe,
+  UnitConverterPipe,
+  CustomDatePipe,
+  DaysConverterPipe,
+  TimeFormat,
+  SafeUrlPipe,
+];
+
 
 @NgModule({
   imports: [
     CommonModule,
-    TranslateModule,
     BootstrapModule,
-    LazyLoadImageModule,
+    sharedModules
   ],
   providers: [SpinnerService],
   declarations: [
-    UnitValueConverterPipe,
-    UnitConverterPipe,
-    TimeFormat,
-    CustomDatePipe,
-    DaysConverterPipe,
-    SafeUrlPipe,
+    sharedComponents,
+    sharedPipes
   ],
   exports: [
-    UnitValueConverterPipe,
-    UnitConverterPipe,
-    CustomDatePipe,
-    DaysConverterPipe,
-    TimeFormat,
-    SafeUrlPipe
+    sharedModules,
+    sharedComponents
   ],
 })
 export class SharedModule {}

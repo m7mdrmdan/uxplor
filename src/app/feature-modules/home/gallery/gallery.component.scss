@@ -1,0 +1,90 @@
+// Imports
+@import '../../../../scss/imports/functions';
+
+/******** START: Gallery ********/
+.gallery {
+    background-color: $color-primary-transparent;
+}
+
+.heading {
+    text-align: center;
+    margin: auto;
+}
+
+.heading span {
+    color: #DE1087
+}
+
+.heading h2 {
+    //font-family: Archivo;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+    text-transform: capitalize;
+}
+
+.heading p {
+    //font-family: Archivo;
+    line-height: 160%;
+    text-align: center;
+    color: $color-gray-500;
+    text-align: center;
+    width: 570px;
+}
+
+.headingsm h4,
+.headingsm a {
+    //font-family: Archivo;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.headingsm a {
+    color: #DE1087;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.headingsm h4 {
+    font-size: 20px;
+    line-height: 24px;
+    color: #101223;
+}
+
+.col-sm {
+    background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .gallery2 img {
+        width: 100%!important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .rightsec {
+        width: 66.6333%;
+    }
+    .leftsec {
+        width: 33.3333%;
+    }
+    .gallery img {
+        padding: .6rem;
+    }
+    .gallery2 .leftimgs,
+    .heading {
+        display: none;
+    }
+}
+
+.gallery img {
+    border-radius: 25px;
+}
+
+.col-sm-8,
+.col-sm-4 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+/******** END: Gallery ********/

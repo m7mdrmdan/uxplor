@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 logoimg="assets/images/logo.png"
-  constructor() { }
+  constructor(private translate:TranslateService) { }
 
   ngOnInit(): void {
+  }
+
+  changeLanguage(){
+    this.translate.use(this.translate.currentLang == 'en'?'ar':'en');
   }
 
 }

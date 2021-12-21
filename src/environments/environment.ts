@@ -7,7 +7,7 @@
 export const environment = {
   production: false,
   configPath: "../config/",
-  api: 'https://udxplore/', //
+  api: 'http://localhost:8080/api/', //
 
 };
 

@@ -4,16 +4,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home/home.component';
 import { CardActionComponent } from './card-action/card-action.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AboutPetmanComponent } from './about-petman/about-petman.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { GallaryComponent } from './gallary/gallary.component';
+import { GalleryComponent } from './gallery/gallery.component';
 import { BrandsComponent } from './brands/brands.component';
 import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback.component';
+import { BannerComponent } from './banner/banner.component';
+import { ScrollableCardsComponent } from './scrollable-cards/scrollable-cards.component';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { HomeComponent } from './home.component';
 
 
 @NgModule({
@@ -24,13 +26,27 @@ import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback
     CustomerFeedbackComponent,
     HeaderComponent,
     NavbarComponent,
-    GallaryComponent,
-    BrandsComponent
+    GalleryComponent,
+    BrandsComponent,
+    BannerComponent,
+    ScrollableCardsComponent,
+    SubHeaderComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule,SlickCarouselModule,FormsModule,ReactiveFormsModule,BootstrapModule
+    SharedModule,FormsModule,ReactiveFormsModule,BootstrapModule
+  ],
+  exports: [
+    CardActionComponent,
+    CustomerFeedbackComponent,
+    HeaderComponent,
+    NavbarComponent,
+    GalleryComponent,
+    BrandsComponent,
+    BannerComponent,
+    ScrollableCardsComponent,
+    SubHeaderComponent
   ]
 })
 export class HomeModule { }

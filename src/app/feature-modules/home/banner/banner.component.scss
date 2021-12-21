@@ -1,0 +1,16 @@
+// Imports
+@import '../../../../scss/imports/functions';
+
+/******** START: Banner ********/
+.banner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  color: $color-white;
+  background: $color-primary-gradient;
+
+  &-icon {
+    border: 4px solid rgba($color-white, 0.3);
+  }
+}
+/******** END: Banner ********/

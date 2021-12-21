@@ -1,18 +1,30 @@
-<section class="headerr d-sm-none  bg-white d-sx-none d-xs-none d-md-block ">
-    <div class="container px-4 ">
-        <div class="row align-items-center justify-content-between ">
-            <div class="d-flex py-3 align-items-center justify-content-center "> <img [src]="logoimg " class="logo " alt="logo ">
-                <div class="px-2 ">
-                    <h1>petman
-                    </h1>
-                    <p>3,203 Saves</p>
-                </div>
-            </div>
-            <button class="py-3 btn ">visit store</button>
+<!--------- START: Header --------->
+<header class="header">
+	<div class="container my-0 my-md-4">
+		<div class="row">
+			<div class="col">
+				<div class="header-wrapper radius-2x">
+					<div>
+						<a href="">
+							<img lazyLoad="assets/images/brand-logo.png" class="brand-img" alt="brand logo">
+						</a>
+					</div>
 
-
-        </div>
-    </div>
-
-
-</section>
+					<div>
+						<button class="btn btn-primary-reverse shadow-none mb-0 d-none d-md-inline-block"
+							(click)="changeLanguage()">
+							<span class="btn-txt">{{'language'|translate}}</span>
+						</button>
+						<button class="btn btn-secondary m-start-2 mb-0 d-none d-md-inline-block">
+							<span class="btn-txt">Discover</span>
+						</button>
+						<button class="btn btn-primary px-md-5 m-start-2 mb-0 radius-circle">
+							<span class="btn-txt">Join now</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!--------- END: Header --------->

@@ -1,0 +1,37 @@
+<app-header class="d-none d-md-block"></app-header>
+<app-sub-header class="d-md-none" [brandName]="businessProfile?.name"></app-sub-header>
+<app-tabs-bar></app-tabs-bar>
+<app-banner [brandInfo]="businessProfile"></app-banner>
+
+<section class="section-md my-n4 my-md-0 bg-md-white">
+	<app-brand-info [brandInfo]="businessProfile"></app-brand-info>
+</section>
+
+<section class="section-md my-n4 my-md-0 bg-md-primary-transparent">
+	<app-scrollable-cards></app-scrollable-cards>
+</section>
+
+<section class="section-md my-n4 my-md-0 bg-md-white">
+	<app-brand-reviews [reviews]="reviews"></app-brand-reviews>
+</section>
+
+<section class="section-md my-n4 my-md-0 bg-md-primary-transparent">
+	<app-brand-gallery 
+		[images]="businessProfile?.businessImages" 
+		[link]="businessProfile?.instagramLink">
+	</app-brand-gallery>
+</section>
+
+<section class="section-md my-n4 my-md-0 bg-md-white d-md-none" *ngIf="businessProfile">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<app-about-brand [data]="businessProfile"></app-about-brand>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-md my-n4 my-md-0 bg-md">
+	<app-brands></app-brands>
+</section>

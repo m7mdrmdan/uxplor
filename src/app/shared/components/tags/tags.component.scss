@@ -1,0 +1,55 @@
+// Imports
+@import '../../../../scss/imports/functions';
+
+/******** START: Tags ********/
+.tag {
+  &s {
+    list-style: none;
+    display: flex;
+  }
+  
+  &-item {
+    color: $color-gray-500;
+    background-color: $color-gray-100;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    position: relative;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 0;
+      display: block;
+      background: $color-primary-gradient;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      transition: all 0.3s ease;
+    }
+    
+    & > span {
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $color-white;
+
+      &::after {
+        height: 100%;
+      }
+      // & > span {
+      //   text-decoration: underline;
+      // }
+    }
+  }
+}
+/******** END: Tags ********/

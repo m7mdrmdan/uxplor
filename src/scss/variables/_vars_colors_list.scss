@@ -1,40 +1,29 @@
 $uxplor-colors : (
-  // Primary colours
-  red:                              $color-primary-red,
-  grey:                             $color-primary-grey,
-  white:                            $color-primary-white,
-  light-red:                        $color-primary-light-red,
+  // Primary colors
+  primary-dark:                     $color-primary-dark,
+  primary-light:                    $color-primary-light,
+
+  
+  
+  // Secondary colors
+  gray-900:                         $color-gray-900,
+  gray-700:                         $color-gray-700,
+  gray-500:                         $color-gray-500,
+  gray-300:                         $color-gray-300,
+  gray-200:                         $color-gray-200,
+  gray-100:                         $color-gray-100,
+  
 
 
-  // Secondary colours
-  turquoise:                        $color-secondary-turquoise,
-  aqua-blue:                        $color-secondary-aqua-blue,
-  metallic-seaweed:                        $color-secondary-metallic-seaweed,
-  trypan-blue:                        $color-secondary-trypan-blue,
-  citron:                        $color-secondary-citron,
-  phlox:                        $color-secondary-phlox,
-  aubergine:                        $color-secondary-aubergine,
-  red-violet:                       $color-secondary-red-violet,
-  spring-green:                     $color-secondary-spring-green,
-  go-green:                     $color-secondary-go-green,
-  fresh-orange:                     $color-secondary-fresh-orange,
-  lemon-yellow:                     $color-secondary-lemon-yellow,
+  // Transparent colors
+  transparent-30:                   $color-transparent-30,
+  transparent-20:                   $color-transparent-20,
 
+  // Error colors
+  error:                            $color-error,
 
-  // Digital colours
-  green:                            $color-digital-green,
-  maroon:                           $color-digital-maroon,
-  dark-red:                         $color-digital-dark-red,
-
-
-  // Monochrome colours
-  black:                            $color-monochrome-black,
-  dark-grey:                        $color-monochrome-dark-grey,
-  anthracite:                       $color-monochrome-anthracite,
-  mid-grey:                         $color-monochrome-mid-grey,
-  platinum:                         $color-monochrome-platinum,
-  silver:                           $color-monochrome-silver,
-  aluminium:                        $color-monochrome-aluminium,
-  light-grey:                       $color-monochrome-light-grey,
-  transparent:                      $color-monochrome-transparent
+  // Main colors
+  black:                            $color-black,
+  white:                            $color-white,
+  transparent:                      $color-transparent
 );

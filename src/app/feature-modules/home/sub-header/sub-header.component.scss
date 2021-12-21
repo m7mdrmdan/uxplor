@@ -1,0 +1,44 @@
+// Imports
+@import '../../../../scss/imports/functions';
+
+/******** START: Sub Header ********/
+
+.btn-back {
+	background-color: $color-white;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+}
+
+
+
+
+.petman p {
+	color: #101223;
+}
+
+.petman span {
+	border-radius: 50% 50%;
+	width: 18px;
+	height: 18px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.arrow {
+	background-color: $color-white;
+	border-radius: 50%;
+	text-align: center;
+	width: 36px;
+	height: 36px;
+}
+
+.arrow span {
+	font-size: 17px;
+	border-radius: 50%;
+	padding: 0px;
+	text-align: center;
+	margin-top: 3px;
+}
+/******** END: Sub Header ********/

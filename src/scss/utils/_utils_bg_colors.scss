@@ -5,88 +5,139 @@
     &-#{ "" + nth($color, 1) } {
       background-color: nth($color, 2) !important;
     }
+
+    &-md-#{ "" + nth($color, 1) } {
+      @include media-breakpoint-up(md) {
+        background-color: nth($color, 2) !important;
+      }
+    }
+
+    &-lg-#{ "" + nth($color, 1) } {
+      @include media-breakpoint-up(lg) {
+        background-color: nth($color, 2) !important;
+      }
+    }
   }
-}
-
-
-.bg{
-  // Gradient direction Down to Top
-  &-down{
-    &-silver-white{
-      background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(204,204,204,0.2) 0%, rgba(255,255,255,1) 70%);
+  
+  &-primary {
+    &-gradient {
+      background: $color-primary-gradient;
+    }
+    &-30 {
+      background: rgba($color-primary-light, 0.3);
+    }
+    &-transparent {
+      background-color: $color-primary-transparent;
     }
   }
 
-  // Gradient direction Left to Right
-  &-left{
-    &-maroon-red{
-      background: linear-gradient(90deg, rgba(153,0,0,1) 0%, rgba(153,0,0,1) 0%, rgba(255,0,0,1) 100%);
+  &-md-primary {
+    &-gradient {
+      @include media-breakpoint-up(md) {
+        background: $color-primary-gradient;
+      }
+    }
+    &-30 {
+      @include media-breakpoint-up(md) {
+        background: rgba($color-primary-light, 0.3);
+      }
+    }
+    &-transparent {
+      @include media-breakpoint-up(md) {
+        background-color: $color-primary-transparent;
+      }
     }
   }
 
-
+  &-lg-primary {
+    &-gradient {
+      @include media-breakpoint-up(lg) {
+        background: $color-primary-gradient;
+      }
+    }
+    &-30 {
+      @include media-breakpoint-up(lg) {
+        background: rgba($color-primary-light, 0.3);
+      }
+    }
+    &-transparent {
+      @include media-breakpoint-up(lg) {
+        background-color: $color-primary-transparent;
+      }
+    }
+  }
+  
+  
   &-black {
     &-60 {
       background-color: rgba($color-black, 0.6);
     }
-
+  
     &-50 {
       background-color: rgba($color-black, 0.5);
     }
-
+  
     &-40 {
       background-color: rgba($color-black, 0.4);
     }
-
+  
     &-20 {
       background-color: rgba($color-black, 0.2);
     }
-
+  
     &-10 {
       background-color: rgba($color-black, 0.1);
     }
   }
-
+  
   &-white {
+    &-60 {
+      background-color: rgba($color-white, 0.6);
+    }
+  
+    &-50 {
+      background-color: rgba($color-white, 0.5);
+    }
+  
     &-40 {
       background-color: rgba($color-white, 0.4);
     }
+  
+    &-20 {
+      background-color: rgba($color-white, 0.2);
+    }
+  
+    &-10 {
+      background-color: rgba($color-white, 0.1);
+    }
   }
-  &-20 {
-    background-color: rgba($color-white, 0.2);
-  }
-
-  &-10 {
-    background-color: rgba($color-white, 0.1);
-  }
-
-
-
+  
+  
+  
   // Social icons
-
   &-social {
     &-facebook {
       background: #1877f2;
     }
-
+  
     &-instagram {
       background: #d6249f;
       background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     }
-
+  
     &-twitter {
       background: #4aa1eb;
     }
-
+  
     &-youtube {
       background: #eb3223;
     }
-
+  
     &-anghami {
       background: rgb(47,160,223);
       background: linear-gradient(180deg, rgba(47,160,223,1) 0%, rgba(221,62,144,1) 77%);
     }
-
+  
     &-linkedin {
       background: #2967bc;
     }

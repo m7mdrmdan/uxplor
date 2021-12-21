@@ -6,4 +6,10 @@
       color: nth($color, 2);
     }
   }
+
+  &-primary-gradient {
+    background: $color-primary-gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

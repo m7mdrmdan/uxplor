@@ -1,0 +1,5 @@
+.rating-item {
+  &:not(:last-child) {
+    margin-inline-end: 2px;
+  }
+}

@@ -1,0 +1,7 @@
+// Color
+
+@mixin color-gradient($color-gradient) {
+  background: $color-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

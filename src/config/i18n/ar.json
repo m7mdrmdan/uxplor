@@ -1,4 +1,12 @@
 {
-
-  
+    "language":"English",
+    "businessProfile":{
+        "title":"",
+        "save":"حفظ",
+        "about":"عن",
+        "reviewsTitle":"ماذا يفول العملاء",
+        "productsTitle":"Trending Products",
+        "ourGallery":"Our Gallery",
+        "relatedBrands":"Related Brands"
+    }  
 }

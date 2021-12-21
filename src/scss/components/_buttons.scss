@@ -9,127 +9,55 @@
   &-primary {
     color: $color-white;
     fill: $color-white;
-    background-color: $main-color;
-    border-color: $main-color;
+    background: $color-primary-gradient;
     
     &:hover {
-      // color: $color-white;
-      background-color: $color-digital-maroon;
-      border-color: $color-digital-maroon;
-    }
-    &-dark {
-      @extend .btn-primary;
+      background: $color-primary-gradient-90;
     }
   }
 
   // .btn-secondary
   &-secondary {
-    color: $color-white;
-    background-color: $color-monochrome-anthracite;
-    border-color: $color-monochrome-anthracite;
-    
-    &:hover {
-      // color: $color-white;
-      background-color: $color-monochrome-dark-grey;
-      border-color: $color-monochrome-dark-grey;
-    }
-    &:focus {
-      background-color: $color-black;
-    }
-    &-dark {
-      @extend .btn-secondary;
-      &:hover {
-        border-color: $color-monochrome-mid-grey;
-      }
-    }
-  }
-
-  // .btn-green
-  &-green {
-    color: $color-white;
-    background-color: $color-digital-green;
-    border-color: $color-digital-green;
-
-    &:hover {
-      background-color: darken($color-digital-green, 7%);
-      border-color: darken($color-digital-green, 7%);
-    }
-    &:focus {
-      background-color: darken($color-digital-green, 13%);
+    background-color: $color-transparent-30;
+    .btn-txt {
+      @include color-gradient($color-primary-gradient);
     }
     
-    &-dark {
-      @extend .btn-secondary;
-      &:hover {
-        border-color: $color-monochrome-mid-grey;
-      }
-    }
-  }
-
-  // .btn-aluminium
-  &-aluminium {
-    color: lighten($color-monochrome-dark-grey, 2%);
-    background-color: darken($color-monochrome-aluminium, 1%);
-    border-color: darken($color-monochrome-aluminium, 1%);
-
     &:hover {
-      background-color: darken($color-monochrome-aluminium, 9%);
-      border-color: darken($color-monochrome-aluminium, 9%);
-    }
-    &:focus {
-      background-color: darken($color-monochrome-aluminium, 14%);
-    }
-    &-dark {
-      @extend .btn-secondary;
-      &:hover {
-        border-color: $color-monochrome-mid-grey;
-      }
+      background-color: rgba($color-primary-dark, 0.05);
     }
   }
 
   // .btn-outline
   &-outline {
-    color: $color-monochrome-dark-grey;
-    background-color: $color-transparent;
-    border-color: $color-monochrome-dark-grey;
-    box-shadow: none;
+    background-color: $color-white;
+    position: relative;
+    background-clip: padding-box;
+    border: solid 1px transparent;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -1px;
+      border-radius: inherit;
+      background: $color-primary-gradient;
+    }
+
+
+    .btn-txt {
+      @include color-gradient($color-primary-gradient);
+    }
+
+    // color: $color-monochrome-dark-grey;
+    // background-color: $color-transparent;
+    // border-color: $color-monochrome-dark-grey;
+    // box-shadow: none;
 
     &:hover {
       background-color: $color-monochrome-aluminium;
       border-color: lighten($color-monochrome-dark-grey, 24%);
-    }
-    &:focus {
-      background-color: $color-transparent;
-    }
-
-    &-dark {
-      @extend .btn-outline;
-      color: $color-white;
-      border-color: $color-white;
-
-      &:hover {
-        background-color: $color-transparent;
-        text-decoration: underline;
-        border-color: $color-white;
-      }
-      &:focus {
-        color: $color-secondary-aqua-blue;
-        border-color: $color-secondary-aqua-blue;
-      }
-
-      &-primary {
-        @extend .btn-outline;
-        color: $color-white;
-        border-color: $color-white;
-
-        &:hover {
-          background-color: $color-digital-maroon;
-          border-color: $color-digital-maroon;
-        }
-        &:focus {
-          background-color: $color-transparent;
-        }
-      }
     }
 
     // .btn-outline-red
@@ -207,27 +135,6 @@
       }
     }
 
-    &-dark {
-      @extend .btn-link;
-      color: $color-white;
-
-      &:hover {
-        color: $color-white;
-      }
-
-      &:focus {
-        color: $color-secondary-aqua-blue;
-      }
-
-      &.btn-disabled {
-        color: $color-monochrome-anthracite;
-
-        &:after {
-          border-color: $color-monochrome-anthracite;
-        }
-      }
-    }
-
     &-active {
       border-color: $color-primary-red;
       background-color: $color-white;
@@ -235,34 +142,6 @@
         border-color: $color-primary-red !important;
         color: $color-monochrome-dark-grey;
         background-color: $color-white;
-      }
-    }
-  }
-
-  // .btn-icon
-  &-icon {
-    & > span {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      & > :last-child {
-        #{$ltr-global} & {
-          margin-left: $font-size-base;
-        }
-        #{$rtl-global} & {
-          margin-right: $font-size-base;
-        }
-      }
-    }
-    svg {
-      width: $font-size-base * 0.8;
-      height: $font-size-base * 0.8;
-      position: relative;
-      top: -1px;
-
-      #{$rtl-global} & {
-        transform: scaleX(-1);
       }
     }
   }
@@ -287,17 +166,25 @@
     font-size: $font-size-base * 0.8;
     padding: $font-size-base * 0.5 $font-size-base;
 
-    svg {
+    .btn-icon {
+      // font-size: 1rem;
+    }
+    
+    .svg {
       width: $font-size-base * 0.6;
       height: $font-size-base * 0.6;
     }
   }
-
+  
   &-lg {
     font-size: $font-size-base * 1.2;
     padding: $font-size-base $font-size-base * 1.6;
-
-    svg {
+    
+    .btn-icon {
+      // font-size: 1rem;
+    }
+    
+    .svg {
       width: $font-size-base;
       height: $font-size-base;
     }

@@ -15,6 +15,8 @@
     );
   }
 
+  @include remove-scroll-bar();
+
   .d-table-cell {
     width: auto;
   }
@@ -27,25 +29,6 @@
     // START: To Tablet size
     overflow-x: auto;
     overflow-y: hidden;
-
-    // background-position: left center, right center, left center, right center;
-    // background-repeat: no-repeat;
-    // background-color: transparent;
-    // background-size: 40px 100%, 40px 100%, 30px 100%, 30px 100%;
-
-    // /* Opera doesn't support this in the shorthand */
-    // background-attachment: local, local, scroll, scroll;
-
-    // &.scroll-shadow-dark{
-    //   background-image:
-    //     /* Shadows */
-    //     linear-gradient(to right, $color-primary-grey, $color-primary-grey),
-    //     linear-gradient(to right, $color-primary-grey, $color-primary-grey),
-
-    //   /* Shadow covers */
-    //     linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
-    //     linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));
-    // }
   } // END: To Tablet size
 
   &-flex {
